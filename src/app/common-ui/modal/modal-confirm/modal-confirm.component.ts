@@ -1,15 +1,17 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ModalComponent } from '../modal.component';
 
 @Component({
 	selector: 'modal-confirm',
 	templateUrl: './modal-confirm.component.html',
-	styleUrls: ['./modal-confirm.component.css', '../modal.css']
+	styleUrls: ['./modal-confirm.component.css', '../modal.component.css']
 })
-export class ModalConfirmComponent {
+export class ModalConfirmComponent extends ModalComponent {
 	@Output() response = new EventEmitter<boolean>();
-	@Input() title: string;
 
-	constructor() { }
+	constructor() { 
+		super();
+	}
 	onResponse(event: Event) {
 		if(event.target == document.getElementById("confirm")) {
 			this.onConfirm();

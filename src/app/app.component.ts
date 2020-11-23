@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'premier-league-manager';
+  title: string = 'Premier League';
+  links = [
+	  {path: "professional", title: "PROFESSIONAL"},
+	  {path: "u18", title: "U18"},
+	  {path: "u23", title: "U23"},
+  ]
 }

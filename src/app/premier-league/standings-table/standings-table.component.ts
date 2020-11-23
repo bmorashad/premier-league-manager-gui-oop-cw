@@ -11,6 +11,7 @@ export class StandingsTableComponent implements OnInit{
 	@Input() _id: string;
 	defaultSort: string = "POINTS";
 
+	fields: string[] = ["Club", "MP", "W", "D", "L", "GS", "GA", "GF", "Pts"]
 
 	ngOnInit() : void {
 		this.sortClubs(this.footballClubs, this.defaultSort);

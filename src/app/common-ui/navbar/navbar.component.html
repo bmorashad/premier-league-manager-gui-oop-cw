@@ -1,12 +1,11 @@
 <div class="navbar">
 	<div class="navbar-logo">
-		<img src="../../../assets/logo.png">
+		<ng-content select=".logo"></ng-content>
 	</div>
 	<div class="navbar-title">
-		<p class="text2 -remove-line-height -remove-margin">Premier League</p>
+		<p class="text2 -remove-line-height -remove-margin">{{title}}</p>
 	</div>
 	<div class="navbar-routes">
-		<p class="text4 active">U18</p>
-		<p class="text4">U23</p>
+		<ng-content select=".route-link"></ng-content>
 	</div>
 </div>

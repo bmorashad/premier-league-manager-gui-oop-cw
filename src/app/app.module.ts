@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PremierLeagueModule } from './premier-league/premier-league.module'
 import { CommonUiModule } from './common-ui/common-ui.module'
+import { ViewsModule } from './views/views.module'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CommonUiModule } from './common-ui/common-ui.module'
     AppRoutingModule,
 	PremierLeagueModule,
 	CommonUiModule,
-	HttpClientModule
+	HttpClientModule,
+	ViewsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

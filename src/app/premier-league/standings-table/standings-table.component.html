@@ -10,18 +10,18 @@
 		<table [attr.id]="_id" class="flat-table">
 			<thead>
 				<tr>
-					<th><span class="text4">Club</span></th>
-					<th><span class="text4">MP</span></th>
-					<th><span class="text4">W</span></th>
-					<th><span class="text4">D</span></th>
-					<th><span class="text4">L</span></th>
-					<th><span class="text4">GS</span></th>
-					<th><span class="text4">GA</span></th>
-					<th><span class="text4">GF</span></th>
-					<th><span class="text4">Pts</span></th>
+					<th *ngFor="let field of fields" class="table-heading"><span class="text4">{{field}}</span></th>
 				</tr>
 			</thead>
-			<tbody >
+			<ng-container *ngIf="footballClubs.length == 0">
+				<tr class="spacer"></tr>
+				<tr class="no-content" >
+					<th [attr.colspan]="fields.length">
+						<span>No Clubs :(</span>
+					</th>
+				</tr>
+			</ng-container>
+			<tbody>
 				<ng-container *ngFor="let footballClub of footballClubs">
 					<tr class="spacer"></tr>
 					<tr>

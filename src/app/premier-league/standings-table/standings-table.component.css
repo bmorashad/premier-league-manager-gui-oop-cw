@@ -20,13 +20,15 @@ table.flat-table tr.spacer {
 	border: 0px;
 	height: 10px;
 }
-table.flat-table th:nth-child(1) {
+table.flat-table th.table-heading:nth-child(1) {
+	padding-left: 20px;
 	text-align: left;
 }
 table.flat-table th > span {
 	font-weight: 600;
 }
 table.flat-table td:nth-child(1) {
+	padding-left: 20px;
 	text-align: left;
 	max-width: 22ch;
 	white-space: nowrap;
@@ -59,3 +61,14 @@ table.flat-table thead tr {
 table.flat-table tbody tr {
 	background: var(--primary-white);
 }
+tr.no-content {
+	background: var(--primary-white);
+}
+tr.no-content th{
+	text-align: center !important;
+	padding: 40px 0;
+}
+tr.no-content th > span {
+	font-size: 2rem;
+	font-weight: 400;
+} 
