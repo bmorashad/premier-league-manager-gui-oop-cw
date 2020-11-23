@@ -1,0 +1,16 @@
+<div class="modal-container" (click)="onResponse($event)">
+	<div class="modal" (click)="onResponse($event)">
+		<div class="modal-title">
+			<h3 class="-remove-line-height text2 bold">{{title}}</h3>
+			<img src="../../../../assets/icons/icon-fail.png">
+		</div>
+		<div class="modal-content">
+			<ng-content></ng-content>
+		</div>
+		<div class="modal-actions">
+			<button id="close" class="btn red-btn">
+				CLOSE
+			</button>
+		</div>
+	</div>
+</div>

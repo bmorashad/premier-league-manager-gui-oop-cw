@@ -1,0 +1,25 @@
+div.tabs {
+	border-bottom: var(--primary-border);
+	border-width: 1px;
+	display: flex;
+}
+div.tab {
+	line-height: 0;
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-bottom: -2px;
+	color: var(--light-black);
+}
+div.active {
+	color: var(--primary-black);
+	border-bottom: 4px solid var(--secondary-black);
+}
+div.tab:hover {
+	cursor: pointer;
+	color: var(--primary-black);
+	border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+}
+div.active:hover {
+	color: var(--primary-black);
+	border-bottom: 4px solid var(--secondary-black);
+}

@@ -1,0 +1,29 @@
+.date-picker-wrapper {
+	display: flex;
+	align-items: center;
+}
+label.date-picker {
+	margin-right: 6px;
+}
+button.clear {
+	display: flex;
+	align-items: center;
+	height: 35px;
+	color: var(--light-black);
+	font-size: 1.2rem;
+	font-weight: 900;
+	margin-left: 2px;
+	box-shadow: var(--dark-box-shadow);
+	background: var(--secondary-purple);
+	border: 0px !important;
+	cursor: pointer;
+}
+button.clear:hover {
+	background: var(--primary-purple);
+}
+button.clear:focus {
+	outline: 0
+}
+button.clear > span {
+	margin-bottom: 4px;
+}

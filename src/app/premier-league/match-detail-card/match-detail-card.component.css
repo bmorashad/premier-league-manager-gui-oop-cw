@@ -1,0 +1,28 @@
+div.match-card {
+  box-shadow: var(--light-box-shadow);
+  border: var(--primary-border);
+  background: var(--primary-white);
+}
+div.match-date {
+  padding: 10px 20px;
+  background: var(--highlight-white);
+  border-bottom: 1px solid var(--dark-white);
+}
+div.match-detail {
+  display: flex;
+  justify-content: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+span.goals {
+  font-weight: 900;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 2.4rem;
+}
+span.goals-sep {
+  color: var(--primary-orange);
+}
+span.winningTeam {
+	color: var(--primary-purple)
+}

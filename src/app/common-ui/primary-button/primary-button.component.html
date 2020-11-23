@@ -1,0 +1,24 @@
+<div *ngIf="type == 'normal'">
+	<button *ngIf="outline; else solid" [ngClass]="{btn: true, 'primary-btn-outline': true}"
+	 (click)="createRipple($event)">
+		<ng-content></ng-content>
+	</button>
+	<ng-template #solid>
+		<button *ngIf="!outline" [ngClass]="{btn: true, 'primary-btn': true}" 
+	  id="confirm" (click)="createRipple($event)">
+			<ng-content></ng-content>
+		</button>
+	</ng-template>
+</div>
+<div #danger>
+	<button *ngIf="outline; else solid" [ngClass]="{btn: true, 'red-btn': true}"
+	 (click)="createRipple($event)">
+			<ng-content></ng-content>
+	</button>
+	<ng-template #solid>
+		<button *ngIf="!outline" [ngClass]="{btn: true, 'red-btn-outline': true}" 
+	  id="confirm" (click)="createRipple($event)">
+			<ng-content></ng-content>
+		</button>
+	</ng-template>
+</div>

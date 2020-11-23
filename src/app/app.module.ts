@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PremierLeagueModule } from './premier-league/premier-league.module'
+import { CommonUiModule } from './common-ui/common-ui.module'
 
 @NgModule({
   declarations: [
@@ -10,7 +13,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+	PremierLeagueModule,
+	CommonUiModule,
+	HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

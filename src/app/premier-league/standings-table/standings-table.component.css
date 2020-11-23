@@ -1,0 +1,61 @@
+/* table */
+div.flat-table-wrapper {
+	position: relative;
+	margin-top: 8px;
+}
+table.flat-table::before {
+	content: "";
+	top: 0px;
+	left: -0.5px;
+	width: calc(100% - 1px);
+	position: absolute;
+	border-top: 3px solid var(--secondary-orange);
+}
+table.flat-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.flat-table tr.spacer {
+	border: 0px;
+	height: 10px;
+}
+table.flat-table th:nth-child(1) {
+	text-align: left;
+}
+table.flat-table th > span {
+	font-weight: 600;
+}
+table.flat-table td:nth-child(1) {
+	text-align: left;
+	max-width: 22ch;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+table.flat-table td:nth-last-child(1) > span {
+	font-weight: 600;
+	color: var(--primary-green);
+}
+table.flat-table td {
+	text-align: center;
+}
+
+table.flat-table th,
+table.flat-table td {
+	padding: 10px 10px;
+}
+
+table.flat-table tr {
+	box-shadow: var(--light-box-shadow);
+	border: var(--primary-border);
+}
+table.flat-table thead tr {
+	/* border-top-color: var(--secondary-orange); */
+
+	background: var(--highlight-white);
+}
+
+table.flat-table tbody tr {
+	background: var(--primary-white);
+}

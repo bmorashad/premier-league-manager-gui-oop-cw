@@ -1,0 +1,10 @@
+div.wrapper {
+	width: 80%;
+	min-width: 700px;
+}
+@media only screen and (max-width: 1000px) {
+	div.wrapper {
+		width: 100%;
+		min-width: auto;
+	}
+}

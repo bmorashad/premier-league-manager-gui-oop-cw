@@ -1,0 +1,48 @@
+.snackbar {
+  width: calc(100% + 1px);
+  position: fixed;
+  top: 50px;
+  left: -1px;
+  box-shadow: var(--dark-box-shadow);
+  border: 1px solid var(--secondary-red);
+  z-index: 999999;
+}
+.snackbar-body {
+  display: flex;
+  align-items: center;
+}
+.snackbar-message {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+.snackbar-close-btn {
+  margin-left: auto;
+  margin-right: 10px;
+}
+.snackbar-close-btn button {
+  background: transparent;
+  border: 0px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--secondary-white);
+}
+.snackbar-close-btn button:focus {
+  outline: 0;
+}
+.snackbar-close-btn button:active {
+  /* background: rgba(0, 0, 0, 0.2); */
+}
+.snackbar-close-btn button:hover {
+  /* background: rgba(0, 0, 0, 0.1); */
+}
+.error-word {
+  color: var(--primary-white);
+}
+.error {
+  background: var(--primary-red);
+  opacity: 0.95;
+  color: var(--primary-white);
+  font-size: 1.6rem;
+}
