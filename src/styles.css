@@ -1,1 +1,348 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;500;700;900&display=swap");
+* {
+	box-sizing: border-box;
+}
+html {
+	font-family: "Yantramanav", sans-serif;
+	font-size: 10px;
+	background: var(--secondary-white);
+}
+.body {
+	margin-top: 70px;
+}
+section {
+	margin-top: 20px;
+}
+:root {
+	/* colors */
+	--primary-white: #ffffff;
+	--secondary-white: #fafafa;
+	--light-black: #333333;
+	--highlight-white: #f6f6f6;
+	--dark-white: #cdcdcd;
+	--primary-black: #000000;
+	--secondary-black: #212121;
+	--primary-grey: #676767;
+	--dark-grey: #878787;
+	--light-grey: #9c9c9c;
+	--primary-purple: #5278ff;
+	--secondary-purple: #89a3ff;
+	--dark-purple: #2957ff;
+	--primary-orange: #ff7a00;
+	--secondary-orange: #ff9900;
+	--primary-yellow: #fff27a;
+	--primary-green: #0c9d35;
+	--primary-red: #ff5151;
+	--secondary-red: #ff7676;
+	--dark-red: #ff1f1f;
+	--highlight-red: #ffeaea;
+	/* borders */
+	--primary-border-width: 2px;
+	--secondary-border-width: 1px;
+	--primary-border: var(--primary-border-width) solid var(--dark-white);
+	--secondary-border: var(--secondary-border-width) solid var(--dark-white);
+	--dark-border: var(--primary-border-width) var(--light-grey);
+	/* shadows */
+	--light-box-shadow: 0px 5px 22px -12px rgba(0, 0, 0, 0.2);
+	--dark-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+	/* utils */
+	--margin-tb-medium: 40px;
+}
+/* util */
+.-position-relative {
+	position: relative;
+}
+.-display-none {
+	display: none;
+}
+.-hide {
+	visibility: hidden;
+}
+.-remove-line-height {
+	line-height: 0;
+}
+.-remove-margin {
+	margin: 0;
+}
+.-margin-rl-small {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.-margin-rl-medium {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.-margin-rl-large {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+.-margin-r-small {
+	margin-right: 5px;
+}
+.-margin-l-small {
+	margin-left: 5px;
+}
+.-margin-r-medium {
+	margin-right: 10px;
+}
+.-margin-l-medium {
+	margin-left: 10px;
+}
+.-margin-l-large {
+	margin-left: 15px;
+}
+.-margin-r-large {
+	margin-right: 15px;
+}
+/* text */
+.bold {
+	font-weight: 500 !important;
+}
+.black {
+	font-weight: 600 !important;
+}
+/* 46 */
+h1.title {
+	font-size: 3.6rem;
+	font-weight: 500;
+}
+/* 42 */
+h2.heading2 {
+	font-size: 2.8rem;
+	font-weight: 500;
+}
+/* 32 */
+h3.heading3 {
+	font-size: 2.6rem;
+	font-weight: 500;
+}
+/* 28 */
+.text1 {
+	font-size: 2.4rem;
+	font-weight: 500;
+}
+/* 24 */
+.text2 {
+	font-size: 2.2rem;
+	font-weight: 400;
+}
+/* new */
+.text3 {
+	font-size: 2.1rem;
+	font-weight: 400;
+}
+/* 22 */
+.text4 {
+	font-size: 2rem;
+	font-weight: 400;
+}
+/* 20 */
+.text5 {
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+.text6 {
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+/* form labels */
+label.small {
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+label.light {
+	color: var(--light-grey);
+}
+/* date-picker */
+input[type="date"].date-picker {
+	height: 35px;
+	box-shadow: var(--dark-box-shadow);
+	padding-right: 5px;
+	padding-left: 10px;
+	margin-right: -2px;
+	color: var(--secondary-black);
+	opacity: 1;
+	border-bottom: var(--primary-border-width) solid var(--secondary-purple);
+	border-top: var(--primary-border-width) solid var(--secondary-purple);
+	border-right: var(--primary-border-width) solid var(--secondary-purple);
+	border-left: var(--primary-border-width) solid var(--secondary-purple);
+}
+input[type="date"].date-picker:focus {
+	outline: 0px;
+	border: 2px solid var(--primary-purple);
+}
+input[type="date"].date-picker:hover {
+	border: 2px solid var(--primary-purple);
+}
+input[type="date"].date-picker::-webkit-calendar-picker-indicator {
+	opacity: 0.5;
+}
+input.search-btn {
+	background: var(--secondary-purple);
+	height: 35px;
+	width: 35px;
+	border-bottom: var(--primary-border-width) solid var(--secondary-purple);
+	border-top: var(--primary-border-width) solid var(--secondary-purple);
+	border-right: var(--primary-border-width) solid var(--secondary-purple);
+	border-left: var(--primary-border-width) solid var(--secondary-purple);
+	color: white;
+	font-weight: 900;
+}
+
+/* separator */
+hr.light {
+	border: 0.5px solid var(--dark-white);
+	border-bottom: 0px;
+	opaciy: 0.6;
+}
+/* drop down */
+.select {
+	height: 30px;
+	padding-left: 5px;
+	border: 1px solid var(--dark-white);
+	background: var(--primary-white);
+	color: var(--secondary-black);
+}
+.select:hover {
+	outline: 0;
+	border: 1px solid var(--primary-purple);
+}
+.select:focus {
+	outline: 0;
+	border: 1px solid var(--primary-purple);
+}
+/* buttons solid */
+button.btn {
+	position: relative;
+	overflow: hidden;
+	transition: background 400ms;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: var(--primary-white);
+	font-weight: 900;
+	font-size: 1.4rem;
+	box-shadow: var(--dark-box-shadow);
+	padding: 0px 30px;
+	height: 33px;
+	transition: 0.15s ease-in-out;
+	cursor: pointer;
+}
+button.btn:focus {
+	outline: 0;
+}
+/* primary */
+button.primary-btn {
+	background: var(--primary-purple);
+	border: 2px solid var(--primary-purple);
+}
+button.primary-btn:hover {
+	background: var(--dark-purple);
+	border: 2px solid var(--dark-purple);
+}
+button.primary-btn:focus {
+	outline: 2px solid var(--secondary-purple);
+	outline-offset: 1px;
+}
+
+/* red */
+button.red-btn {
+	background: var(--primary-red);
+	border: 2px solid var(--primary-red);
+}
+button.red-btn:hover {
+	background: var(--dark-red);
+	border: 2px solid var(--dark-red);
+}
+button.red-btn:focus {
+	outline: 2px solid var(--secondary-red);
+	outline-offset: 1px;
+}
+
+/* outline button */
+/* primary-outline */
+button.primary-btn-outline {
+	color: var(--primary-purple);
+	background: var(--primary-white);
+	border: 2px solid var(--primary-purple);
+}
+button.primary-btn-outline:hover {
+	color: var(--primary-white);
+	background: var(--dark-purple);
+	border: 2px solid var(--dark-purple);
+}
+button.primary-btn-outline:focus {
+	outline: 2px solid var(--secondary-purple);
+	outline-offset: 1px;
+}
+/* red-outline */
+button.red-btn-outline {
+	color: var(--primary-red);
+	background: var(--primary-white);
+	border: 2px solid var(--primary-red);
+}
+button.red-btn-outline:hover {
+	color: var(--primary-white);
+	background: var(--dark-red);
+	border: 2px solid var(--dark-red);
+}
+button.red-btn-outline:focus {
+	outline: 2px solid var(--secondary-red);
+	outline-offset: 1px;
+}
+button.btn > * {
+	margin-bottom: 1px !important;
+}
+/* button spinner wrapper */
+button.btn > .spinner {
+	position: absolute;
+}
+/* error message */
+div.error-message-card {
+	border-left: 2px solid var(--primary-red);
+	background: var(--highlight-red);
+	padding: 20px 15px;
+	color: var(--primary-grey);
+}
+/* spinner */
+.spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	vertical-align: text-bottom;
+	border: 0.25em solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	-webkit-animation: spinner-border 0.75s linear infinite;
+	animation: spinner-border 0.75s linear infinite;
+}
+.spinner-small {
+	width: 2rem;
+	height: 2rem;
+}
+@keyframes spinner-border {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+/* ripple */
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 50ms linear;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
