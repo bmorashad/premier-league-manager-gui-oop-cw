@@ -30,9 +30,9 @@ div.modal-title {
 	border-bottom: 1px solid var(--dark-white);
 }
 div.modal-title > img{
-	margin-left: 12px;
-	width: 33px;
-	height: 33px;
+	margin-left: 15px;
+	width: 30px;
+	height: 30px;
 }
 div.modal-content {
 	padding-top: 10px;

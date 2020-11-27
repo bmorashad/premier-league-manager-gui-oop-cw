@@ -6,8 +6,9 @@ import { IMatch } from '../../dto/Match'
 	templateUrl: './match-detail-card.component.html',
 	styleUrls: ['./match-detail-card.component.css']
 })
-export class MatchDetailCardComponent {
+export class MatchDetailCardComponent implements OnInit {
 	@Input() match: IMatch;
+	winningTeam: string;
 
 	getWinningTeam() : string{
 		if(this.match.teamAGoals > this.match.teamBGoals) {
@@ -17,8 +18,8 @@ export class MatchDetailCardComponent {
 			return this.match.teamB
 		}
 	}
-	isWin(team: string) : boolean{
-		return team == this.getWinningTeam()
+	ngOnInit(): void {
+		this.winningTeam = this.getWinningTeam();
 	}
 	constructor() { }
 

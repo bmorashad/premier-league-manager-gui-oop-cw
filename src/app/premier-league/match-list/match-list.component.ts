@@ -24,6 +24,9 @@ export class MatchListComponent implements OnInit {
 	setMatchesByDate(matches: IMatch[]) : void {
 		this.matchesByDate = matches;
 	}
+	sortMatchesByDate(matches: IMatch[]) : IMatch[] {
+		return this.matches.sort((m1 , m2) => m1.date.getTime() - m2.date.getTime());
+	}
 	getMatchesByDate(date: Date) : IMatch[] {
 		if(date) {
 			return this.matches.filter(match =>  {
@@ -38,7 +41,7 @@ export class MatchListComponent implements OnInit {
 		this.noMatches = reason;
 	}
 	ngOnInit() : void {
-		this.matchesByDate = this.matches;
+		this.matchesByDate = this.sortMatchesByDate(this.matches);
 	}
 
   constructor() { }

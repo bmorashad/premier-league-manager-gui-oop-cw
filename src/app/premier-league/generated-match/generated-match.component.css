@@ -15,3 +15,6 @@ span.generated-goals {
 span.goals-sep {
   color: var(--primary-orange);
 }
+span.winningTeam {
+	color: var(--primary-purple)
+}

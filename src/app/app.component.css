@@ -8,10 +8,10 @@
   color: var(--secondary-orange);
 }
 .active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-decoration-color: var(--secondary-orange);
   color: var(--secondary-orange);
-  font-weight: 600;
+  font-weight: 500;
 }
 .logo {
   display: flex;

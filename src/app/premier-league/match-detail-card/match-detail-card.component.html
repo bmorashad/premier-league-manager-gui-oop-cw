@@ -3,6 +3,6 @@
 		<p class="text5 -remove-margin">{{match.date | date: 'fullDate'}}</p>
 	</div>
 	<div class="match-detail">
-		<p class="text3"><span *ngIf="isWin(match.teamA)" class="winningTeam">➤ </span>{{match.teamA}}<span class="goals">{{match.teamAGoals}}<span class="goals-sep -margin-rl-small">:</span>{{match.teamBGoals}}</span><span *ngIf="isWin(match.teamB)" class="winningTeam">➤ </span>{{match.teamB}}</p>
+		<p class="text3"><span *ngIf="winningTeam == match.teamA" class="winningTeam">➤ </span>{{match.teamA}}<span class="goals">{{match.teamAGoals}}<span class="goals-sep -margin-rl-small">:</span>{{match.teamBGoals}}</span><span *ngIf="winningTeam == match.teamB" class="winningTeam">➤ </span>{{match.teamB}}</p>
 	</div>
 </div>

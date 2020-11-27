@@ -14,11 +14,13 @@ table.flat-table::before {
 table.flat-table {
 	width: 100%;
 	border-collapse: collapse;
+	border: 2px solid var(--grey-white);
+	box-shadow: var(--light-box-shadow);
 }
 
 table.flat-table tr.spacer {
 	border: 0px;
-	height: 10px;
+	height: 0px;
 }
 table.flat-table th.table-heading:nth-child(1) {
 	padding-left: 20px;
@@ -42,15 +44,32 @@ table.flat-table td:nth-last-child(1) > span {
 table.flat-table td {
 	text-align: center;
 }
-
+table.flat-table td, th {
+	border: 1px solid var(--grey-white);
+}
+table.flat-table th {
+	border-bottom: 0px solid var(--grey-white);
+}
 table.flat-table th,
 table.flat-table td {
 	padding: 10px 10px;
 }
+table.flat-table tbody tr:nth-child(2) td:nth-child(1) {
+	border-left: 2px solid var(--secondary-purple) ;
+}
+table.flat-table tbody tr:nth-child(4) td:nth-child(1) {
+	border-left: 2px solid var(--secondary-purple) ;
+}
+table.flat-table tbody tr:nth-child(6) td:nth-child(1) {
+	border-left: 2px solid var(--secondary-purple) ;
+}
+table.flat-table tbody tr:nth-last-child(2) {
+	border-bottom: 2px solid var(--grey-white);
+}
 
 table.flat-table tr {
-	box-shadow: var(--light-box-shadow);
-	border: var(--primary-border);
+	/* box-shadow: var(--light-box-shadow); */
+	/* border: var(--primary-border); */
 }
 table.flat-table thead tr {
 	/* border-top-color: var(--secondary-orange); */
