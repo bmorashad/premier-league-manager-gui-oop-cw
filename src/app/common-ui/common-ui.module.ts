@@ -10,11 +10,12 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TabComponent } from './tabs/tab.component';
 import { PrimaryButtonComponent } from './primary-button/primary-button.component';
+import { IconButtonComponent } from './icon-button/icon-button.component';
 
 
 
 @NgModule({
-  declarations: [ ModalConfirmComponent, ModalErrorComponent, ModalComponent, NavbarComponent, Title1Component, SnackbarComponent, DatePickerComponent, TabsComponent, TabComponent, PrimaryButtonComponent ],
+  declarations: [ ModalConfirmComponent, ModalErrorComponent, ModalComponent, NavbarComponent, Title1Component, SnackbarComponent, DatePickerComponent, TabsComponent, TabComponent, PrimaryButtonComponent, IconButtonComponent ],
   imports: [
     CommonModule
   ],
@@ -28,7 +29,8 @@ import { PrimaryButtonComponent } from './primary-button/primary-button.componen
 	  SnackbarComponent,
 	  TabComponent,
 	  TabsComponent,
-	  PrimaryButtonComponent
+	  PrimaryButtonComponent,
+	  IconButtonComponent
   ]
 })
 export class CommonUiModule { }

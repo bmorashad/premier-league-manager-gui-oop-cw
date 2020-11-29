@@ -82,6 +82,7 @@ table.flat-table tbody tr {
 }
 tr.no-content {
 	background: var(--primary-white);
+	border-bottom: 2px solid var(--grey-white);
 }
 tr.no-content th{
 	text-align: center !important;

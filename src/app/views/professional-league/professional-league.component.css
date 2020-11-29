@@ -4,3 +4,12 @@ span.season {
 	margin-left: 20px;
 	color: var(--primary-purple)
 }
+.refresh-button-wrapper {
+  position: relative;
+  top: 2px;
+  display: flex;
+  justify-content: flex-end;
+}
+.refresh-button {
+  position: absolute;
+}

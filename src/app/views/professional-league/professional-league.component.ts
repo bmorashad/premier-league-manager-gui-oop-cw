@@ -6,9 +6,9 @@ import { IFootballClub } from '../../dto/FootballClub';
 import {ModalService} from 'src/app/common-ui/modal/modal.service';
 
 @Component({
-  selector: 'app-professional-league',
-  templateUrl: './professional-league.component.html',
-  styleUrls: ['./professional-league.component.css']
+	selector: 'app-professional-league',
+	templateUrl: './professional-league.component.html',
+	styleUrls: ['./professional-league.component.css']
 })
 export class ProfessionalLeagueComponent implements OnInit {
 	title: string = "Premier League"
@@ -41,7 +41,7 @@ export class ProfessionalLeagueComponent implements OnInit {
 					this.showSuccessNotify();
 				} else  {
 					if(res.status == 0) {
-						this.setErrorNotifyMessage(res.errorMessage);
+						this.setErrorNotifyMessage(res.errorMessage + ", try refreshing");
 					}
 					this.showErrorNotify();
 				} }, () => {
@@ -69,30 +69,35 @@ export class ProfessionalLeagueComponent implements OnInit {
 	setErrorNotifyMessage(message: string) : void{
 		this.errorNotifyMessage = message;
 	}
-	constructor(private footballClubService: FootballClubService, 
-				private matchService: MatchService, private modalService: ModalService) { }
+	constructor(private footballClubService: FootballClubService, private matchService: MatchService, private modalService: ModalService) { }
 
-  loadMatches() {
-	  this.matchService.all()
-      .subscribe(res => {
-		  if(res.status == 1) {
-			  console.log(res);
-			  this.matches = res.data.matches;
-			  console.log(this.matches);
-		  }
-	  });
-  }
-  loadClubs() {
-	  this.footballClubService.all()
-      .subscribe(res => {
-		  if(res.status == 1) {
-			  this.footballClubs = res.data.footballClubs;
-		  }
-	  });
-  }
-  ngOnInit(): void {
-	  this.loadMatches()
-	  this.loadClubs()
-  }
+	onRefresh(): void {
+		this.loadData()
+	}
+	loadData() {
+		this.loadMatches();
+		this.loadClubs();
+	}
+	loadMatches() {
+		this.matchService.all()
+		.subscribe(res => {
+			if(res.status == 1) {
+				console.log(res);
+				this.matches = res.data.matches;
+				console.log(this.matches);
+			}
+		});
+	}
+	loadClubs() {
+		this.footballClubService.all()
+		.subscribe(res => {
+			if(res.status == 1) {
+				this.footballClubs = res.data.footballClubs;
+			}
+		});
+	}
+	ngOnInit(): void {
+		this.loadData();
+	}
 
 }

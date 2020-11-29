@@ -8,12 +8,14 @@ import { ModalComponent } from '../modal.component';
 })
 export class ModalConfirmComponent extends ModalComponent {
 
-	onResponse(event: Event) {
+	onResponse(event: any) {
+		const isContainer = event.target.classList.contains('modal-container')
+		const isWrapper = event.target.classList.contains('modal-wrapper')
 		if(event.target == document.getElementById("confirm")) {
 			this.onConfirm();
 		} else if(event.target == document.getElementById("cancel")) {
 			this.onCloseResponse();
-		} else if(event.target == document.querySelector(".modal-container")) {
+		} else if(isWrapper || isContainer) {
 			this.onCloseResponse();
 		}
 	}

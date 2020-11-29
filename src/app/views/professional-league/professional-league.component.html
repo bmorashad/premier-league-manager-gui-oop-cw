@@ -20,6 +20,11 @@
 <span>{{title}}</span>
 </title1>
 <section class="-margin-top-large -margin-bottom-small">
+	<div class="refresh-button-wrapper">
+		<div class="refresh-button">
+			<icon-button icon="../../../assets/icons/refresh.png" (click)="onRefresh()"></icon-button>
+		</div>
+	</div>
 	<premier-league [footballClubs]="footballClubs" [matches]="matches" (match)="onMatchGenerate($event)">
 	</premier-league>
 </section>

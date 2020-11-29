@@ -1,0 +1,26 @@
+div.icon-button > button {
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border: 0px;
+}
+div.icon-button > button:hover {
+	outline: 0;
+	background: rgba(0, 0, 0, 0.1)
+}
+div.icon-button > button:active {
+	outline: 0;
+	background: rgba(0, 0, 0, 0.3)
+}
+div.icon-button > button:focus {
+	outline: 1;
+	outline-color: rgba(0, 0, 0, 0.2)
+	/* background: rgba(0, 0, 0, 0.3) */
+}
+div.icon-button button > img {
+	width: 30px;
+	height: 30px;
+}
