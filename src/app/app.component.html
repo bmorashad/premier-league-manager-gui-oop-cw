@@ -2,7 +2,7 @@
 <div class="logo">
 	<img src="../../../assets/logo.png">
 </div>
-<a *ngFor="let link of links" routerLinkActive="active" [routerLink]="link.path" class="route-link text4">{{link.title}}</a>
+<span class="left text4 bold"><span class="season-begin bold">/</span>{{season}}</span>
 </navbar>
 <div class="content">
 	<router-outlet></router-outlet>

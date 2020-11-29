@@ -16,20 +16,8 @@
   color: var(--primary-white);
   font-weight: 500;
 }
-.navbar-routes {
+.navbar-left {
   margin-left: auto;
   display: flex;
   margin-right: 15px;
-}
-.navbar-routes > p {
-  font-weight: 400;
-  color: var(--primary-white);
-  margin-right: 10px;
-  font-weight: 500;
-}
-.navbar-routes > p:hover {
-  color: var(--secondary-orange);
-}
-.navbar-routes > p.active {
-  color: var(--secondary-orange);
 }

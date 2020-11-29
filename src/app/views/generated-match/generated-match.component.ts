@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { IMatch } from '../../dto/Match';
 
 @Component({
@@ -6,7 +6,7 @@ import { IMatch } from '../../dto/Match';
 	templateUrl: './generated-match.component.html',
 	styleUrls: ['./generated-match.component.css']
 })
-export class GeneratedMatchComponent implements OnInit{
+export class GeneratedMatchComponent implements OnInit, OnChanges{
 	@Input() match: IMatch;
 	winningTeam: string;
 
@@ -17,6 +17,9 @@ export class GeneratedMatchComponent implements OnInit{
 		if(this.match.teamBGoals > this.match.teamAGoals) {
 			return this.match.teamB
 		}
+	}
+	ngOnChanges(): void {
+		this.winningTeam = this.getWinningTeam();
 	}
 
 	ngOnInit(): void {

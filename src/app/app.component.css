@@ -1,17 +1,11 @@
-.route-link {
+span.left {
   color: var(--primary-white);
   margin-right: 10px;
   font-weight: 500;
   text-decoration: none;
 }
-.route-link:hover {
-  color: var(--secondary-orange);
-}
-.active {
-  /* text-decoration: underline; */
-  text-decoration-color: var(--secondary-orange);
-  color: var(--secondary-orange);
-  font-weight: 500;
+span.season-begin {
+	color: var(--primary-orange)
 }
 .logo {
   display: flex;

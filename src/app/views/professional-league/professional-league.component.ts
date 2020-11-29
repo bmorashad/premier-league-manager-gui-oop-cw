@@ -4,7 +4,6 @@ import { MatchService } from '../../shared/services/match.service';
 import { IMatch } from '../../dto/Match';
 import { IFootballClub } from '../../dto/FootballClub';
 import {ModalService} from 'src/app/common-ui/modal/modal.service';
-import {PremierLeagueService} from 'src/app/shared/services/premier-league.service';
 
 @Component({
   selector: 'app-professional-league',
@@ -13,7 +12,6 @@ import {PremierLeagueService} from 'src/app/shared/services/premier-league.servi
 })
 export class ProfessionalLeagueComponent implements OnInit {
 	title: string = "Premier League"
-	season: string = ""
 	errorNotify: boolean = false;
 	errorNotifyMessage: string = "";
 	successNotify: boolean = false;
@@ -71,8 +69,8 @@ export class ProfessionalLeagueComponent implements OnInit {
 	setErrorNotifyMessage(message: string) : void{
 		this.errorNotifyMessage = message;
 	}
-	constructor(private footballClubService: FootballClubService, private matchService: MatchService,
-			   private modalService: ModalService, private premierLeagueService: PremierLeagueService) { }
+	constructor(private footballClubService: FootballClubService, 
+				private matchService: MatchService, private modalService: ModalService) { }
 
   loadMatches() {
 	  this.matchService.all()
@@ -92,18 +90,9 @@ export class ProfessionalLeagueComponent implements OnInit {
 		  }
 	  });
   }
-  loadSeason() {
-	  this.premierLeagueService.getSeason()
-	  .subscribe(res => {
-		  if(res.status == 1) {
-			  this.season = res.data.season;
-		  }
-	  });
-  }
   ngOnInit(): void {
 	  this.loadMatches()
 	  this.loadClubs()
-	  // this.loadSeason()
   }
 
 }
