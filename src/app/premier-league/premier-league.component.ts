@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IMatch } from '../dto/Match';
 import { IFootballClub } from '../dto/FootballClub';
 
@@ -17,11 +17,13 @@ export class PremierLeagueComponent implements OnInit {
 	showGeneratedMatchError: boolean = false;
 	@Input() matches: IMatch[] = []
 	@Input() footballClubs: IFootballClub[] = []
+	@Output() match = new EventEmitter<IMatch>();
 
 	onCloseError() : void {
 		this.toggleGeneratedMatchError();
 	}
 	onMatchGenerate(match: IMatch) : void {
+		this.match.emit(match);
 		this.generatedMatch = match;
 		if(match == null) {
 			this.setErrorMessage("not enough clubs to generate match");
