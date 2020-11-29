@@ -3,6 +3,7 @@ import { FootballClubService } from '../../shared/services/football-club.service
 import { MatchService } from '../../shared/services/match.service';
 import { IMatch } from '../../dto/Match';
 import { IFootballClub } from '../../dto/FootballClub';
+import {ModalService} from 'src/app/common-ui/modal/modal.service';
 
 @Component({
   selector: 'app-professional-league',
@@ -18,22 +19,17 @@ export class ProfessionalLeagueComponent implements OnInit {
 	matchGenerateErrorTitle: string = "ERROR: Generated Match Failed :/"
 	errorMessage: string = ""
 	generatedMatch: IMatch = null;
-	showGeneratedMatch: boolean = false;
-	showGeneratedMatchError: boolean = false;
 
 	footballClubs: IFootballClub[] = [];
 	matches: IMatch[] = [];
 
-	onCloseError() : void {
-		this.toggleGeneratedMatchError();
-	}
 	onMatchGenerate(match: IMatch) : void {
 		this.generatedMatch = match;
 		if(match == null) {
 			this.setErrorMessage("not enough clubs to generate match");
-			return this.toggleGeneratedMatchError();
+			return this.toggleModal("match-error")
 		}
-		return this.toggleGeneratedMatchModal();
+		return this.toggleModal("match-confirm")
 	}
 	confirmGeneratedMatch(response: boolean) : void {
 		if(response) {
@@ -52,7 +48,10 @@ export class ProfessionalLeagueComponent implements OnInit {
 					this.showErrorNotify();
 				});
 		}
-		this.toggleGeneratedMatchModal()
+		return this.toggleModal("match-confirm")
+	}
+	toggleModal(id: string): void {
+		this.modalService.toggle(id)
 	}
 	addMatch(match: IMatch): IMatch[] {
 		return [ ...this.matches, match];
@@ -69,14 +68,8 @@ export class ProfessionalLeagueComponent implements OnInit {
 	setErrorNotifyMessage(message: string) : void{
 		this.errorNotifyMessage = message;
 	}
-	// close or open
-	toggleGeneratedMatchModal() {
-		this.showGeneratedMatch = !this.showGeneratedMatch;
-	}
-	toggleGeneratedMatchError() { 
-		this.showGeneratedMatchError = !this.showGeneratedMatchError;
-	}
-	constructor(private footballClubService: FootballClubService, private matchService: MatchService) { }
+	constructor(private footballClubService: FootballClubService, private matchService: MatchService,
+			   private modalService: ModalService) { }
 
   loadMatches() {
 	  this.matchService.all()

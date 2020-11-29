@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable} from 'rxjs'
+import { Observable, Subject} from 'rxjs'
+import { ModalAction } from './types'
+
 @Injectable({
   providedIn: 'root'
 })
 export class ModalService {
-	private display: BehaviorSubject<'open' | 'close'> = 
-		new BehaviorSubject('close')
+	private display: Subject<ModalAction> = new Subject();
 
-	watch(): Observable<'open' | 'close'> {
+	_watch(): Observable<ModalAction> {
 		return this.display.asObservable();
 	}
-	open(): void{
-		this.display.next('open');
+	toggle(id: string): void{
+		this.display.next(['toggle', id]);
 	}
-	close(): void {
-		this.display.next('close')
+	open(id: string): void{
+		this.display.next(['open', id]);
+	}
+	close(id: string): void {
+		this.display.next(['close', id]);
 	}
 }

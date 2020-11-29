@@ -1,27 +1,24 @@
-import { Component, Output, Input, EventEmitter } from '@angular/core';
+import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
 import { ModalComponent } from '../modal.component';
+import { ModalAction } from '../types';
 
 @Component({
 	selector: 'modal-error',
 	templateUrl: './modal-error.component.html',
 	styleUrls: ['./modal-error.component.css', '../modal.component.css']
 })
-export class ModalErrorComponent extends ModalComponent{
-	@Output() response = new EventEmitter<boolean>();
+export class ModalErrorComponent extends ModalComponent implements OnInit{
+	status: Observable<ModalAction>; 
 
-	constructor() { 
-		super()
-	}
 
 	onResponse(event: Event) {
-		if(event.target == document.getElementById("confirm")) {
-			this.onClose();
-		} else if(event.target == document.getElementById("close")) {
-			this.onClose();
+		if(event.target == document.getElementById("close")) {
+			this.onCloseResponse();
 		} 
-	}
-	onClose() {
-		this.response.emit(false)
+		else if(event.target == document.querySelector(".modal-container")) {
+			this.onCloseResponse();
+		}
 	}
 
 }

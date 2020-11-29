@@ -7,25 +7,18 @@ import { ModalComponent } from '../modal.component';
 	styleUrls: ['./modal-confirm.component.css', '../modal.component.css']
 })
 export class ModalConfirmComponent extends ModalComponent {
-	@Output() response = new EventEmitter<boolean>();
 
-	constructor() { 
-		super();
-	}
 	onResponse(event: Event) {
 		if(event.target == document.getElementById("confirm")) {
 			this.onConfirm();
 		} else if(event.target == document.getElementById("cancel")) {
-			this.onCancel();
+			this.onCloseResponse();
 		} else if(event.target == document.querySelector(".modal-container")) {
-			this.onCancel();
+			this.onCloseResponse();
 		}
 	}
 	onConfirm() {
 		this.response.emit(true)
-	}
-	onCancel() {
-		this.response.emit(false)
 	}
 
 }
