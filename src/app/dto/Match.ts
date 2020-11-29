@@ -3,7 +3,7 @@ export interface IMatch {
 	teamB: string
 	teamAGoals: number,
 	teamBGoals: number,
-	date: Date,
+	date: string,
 	winningTeam?: string,
 	defeatedTeam?: string
 }

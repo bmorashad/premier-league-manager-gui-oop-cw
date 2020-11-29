@@ -25,9 +25,10 @@ export class PremierLeagueComponent implements OnInit {
 		this.generatedMatch = match;
 		if(match == null) {
 			this.setErrorMessage("not enough clubs to generate match");
-			return this.toggleGeneratedMatchError();
+			this.showErrorNotify()
+			return;
+			// return this.toggleGeneratedMatchError();
 		}
-		this.showErrorNotify()
 		return this.toggleGeneratedMatchModal();
 	}
 	setErrorMessage(message: string) : void{
@@ -35,13 +36,12 @@ export class PremierLeagueComponent implements OnInit {
 	}
 	confirmGeneratedMatch(response: boolean) : void {
 		if(response) {
-			this.addMatch(this.generatedMatch);
+			this.matches = this.addMatch(this.generatedMatch);
 		}
 		this.toggleGeneratedMatchModal()
 	}
 	showErrorNotify() {
 		this.errorNotify = true;
-		setTimeout(() => this.errorNotify = false, 2000)
 	}
 	toggleGeneratedMatchModal() {
 		this.showGeneratedMatch = !this.showGeneratedMatch;
@@ -49,10 +49,11 @@ export class PremierLeagueComponent implements OnInit {
 	toggleGeneratedMatchError() { 
 		this.showGeneratedMatchError = !this.showGeneratedMatchError;
 	}
-	addMatch(match: IMatch): void {
-		this.matches.push(match);
+	addMatch(match: IMatch): IMatch[] {
+		return [ ...this.matches, match];
 	}
 	ngOnInit(): void {
+		console.log(this.matches)
 	}
 
 	constructor() { }

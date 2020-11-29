@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { IMatch } from '../../dto/Match'
 
 @Component({
@@ -6,7 +6,7 @@ import { IMatch } from '../../dto/Match'
   templateUrl: './match-list.component.html',
   styleUrls: ['./match-list.component.css']
 })
-export class MatchListComponent implements OnInit {
+export class MatchListComponent implements OnInit, OnChanges {
 	@Input() matches: IMatch[] = [];
 
 	matchesByDate: IMatch[];
@@ -25,20 +25,22 @@ export class MatchListComponent implements OnInit {
 		this.matchesByDate = matches;
 	}
 	sortMatchesByDate(matches: IMatch[]) : IMatch[] {
-		return this.matches.sort((m1 , m2) => m1.date.getTime() - m2.date.getTime());
+		return this.matches.sort((m1 , m2) => Date.parse(m1.date) - Date.parse(m2.date));
 	}
 	getMatchesByDate(date: Date) : IMatch[] {
 		if(date) {
 			return this.matches.filter(match =>  {
-				match.date.setHours(0, 0, 0, 0)
 				date.setHours(0, 0, 0, 0)
-				return match.date.getTime() == date.getTime()
+				return Date.parse(match.date) == date.getTime()
 			});
 		}
 		return this.matches;
 	}
 	setNoMatches(reason: string) {
 		this.noMatches = reason;
+	}
+	ngOnChanges() : void {
+		this.matchesByDate = this.sortMatchesByDate(this.matches);
 	}
 	ngOnInit() : void {
 		this.matchesByDate = this.sortMatchesByDate(this.matches);

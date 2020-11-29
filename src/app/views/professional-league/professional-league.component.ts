@@ -16,15 +16,27 @@ export class ProfessionalLeagueComponent implements OnInit {
   constructor(private footballClubService: FootballClubService, private matchService: MatchService) { }
 
   loadMatches() {
-	  this.matches = this.matchService.getAllMatches()
+	  this.matchService.all()
+      .subscribe(res => {
+		  if(res.status == 1) {
+			  console.log(res);
+			  this.matches = res.data.matches;
+			  console.log(this.matches);
+		  }
+	  });
   }
   loadClubs() {
-	  this.footballClubs = this.footballClubService.getAllFootballClubs()
+	  this.footballClubService.all()
+      .subscribe(res => {
+		  if(res.status == 1) {
+			  this.footballClubs = res.data.footballClubs;
+		  }
+	  });
   }
 
   ngOnInit(): void {
-	  this.loadClubs()
 	  this.loadMatches()
+	  this.loadClubs()
   }
 
 }

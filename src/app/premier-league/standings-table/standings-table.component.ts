@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { IFootballClub } from '../../dto/FootballClub';
 
 @Component({
@@ -6,7 +6,7 @@ import { IFootballClub } from '../../dto/FootballClub';
 	templateUrl: './standings-table.component.html',
 	styleUrls: ['./standings-table.component.css']
 })
-export class StandingsTableComponent implements OnInit{
+export class StandingsTableComponent implements OnInit, OnChanges{
 	@Input() footballClubs: IFootballClub[] = [];
 	@Input() _id: string;
 	defaultSort: string = "POINTS";
@@ -14,6 +14,9 @@ export class StandingsTableComponent implements OnInit{
 	fields: string[] = ["Club", "MP", "W", "D", "L", "GS", "GA", "GF", "Pts"]
 
 	ngOnInit() : void {
+		this.sortClubs(this.footballClubs, this.defaultSort);
+	}
+	ngOnChanges() : void {
 		this.sortClubs(this.footballClubs, this.defaultSort);
 	}
 	onSortByChange(event: any) {

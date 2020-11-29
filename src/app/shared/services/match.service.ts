@@ -1,37 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { IMatch } from '../../dto/Match'
+import { BASE_URL } from './env'
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MatchService {
-	private matches: IMatch[] = [
-		{
-			teamA: "FC Barcelona",
-			teamB: "Liverpool",
-			teamAGoals: 5,
-			teamBGoals: 3,
-			date: new Date(2021, 5, 25)
-		},
-		{
-			teamA: "Arsenal",
-			teamB: "Liverpool",
-			teamAGoals: 5,
-			teamBGoals: 6,
-			date: new Date(2021, 5, 25)
-		},
-		{
-			teamA: "FC Barcelona",
-			teamB: "Liverpool",
-			teamAGoals: 8,
-			teamBGoals: 8,
-			date: new Date(2021, 5, 25)
-		}
-	]
+  private model = 'match';
+  constructor(private http: HttpClient) { }
 
-	getAllMatches() : IMatch[] {
-		return this.matches
+	// all() : Observable<IMatch[]> {
+		// return this.http.get<IMatch[]>(this.getUrl());
+	// }
+	all() : Observable<any> {
+		return this.http.get<any>(this.getUrl());
 	}
-  constructor(http: HttpClient) { }
+	private getUrl(): string {
+		return `${BASE_URL}${this.model}`;
+	}
 }

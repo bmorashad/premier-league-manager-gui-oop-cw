@@ -33,7 +33,7 @@ export class GenerateMatchButtonComponent {
 		if(!this.isGoalDeferFromLastGeneratedMatch(teamAGoals, teamBGoals)) {
 			[teamAGoals, teamBGoals] = this.generateTwoGoals(maxGoals);
 		}
-		const date = this.generateDateBySeason(this.season);
+		const date: string = this.generateDateBySeason(this.season);
 		let match: IMatch =  {
 			teamA: teamA.clubName,
 			teamB: teamB.clubName,
@@ -111,7 +111,7 @@ export class GenerateMatchButtonComponent {
 		console.error("Not enough teams");
 		return []
 	}
-	generateDateBySeason(season: string): Date {
+	generateDateBySeason(season: string): string {
 		const firstYear: number = parseInt(season.split("-")[0]);
 		const secondYear: number = parseInt(season.split("-")[1]);
 		const matchYear: number = this.generateRandomInt(firstYear, secondYear);
@@ -121,7 +121,8 @@ export class GenerateMatchButtonComponent {
 		if(matchDate.getTime() < Date.now()) {
 			return this.generateDateBySeason(season);
 		}
-		return matchDate;
+		let month = matchDate.getMonth() + 1;
+		return matchDate.getFullYear() + "-" + month + "-" + matchDate.getDate();
 	}
 	generateDay(year: number, month: number): number{
 		const maxDaysForMonth: number = this.getMaxDaysForMonth(year, month);
