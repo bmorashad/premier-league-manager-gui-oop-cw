@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProfessionalLeagueComponent } from './views/professional-league/professional-league.component'
+import { PremierLeagueComponent } from './views/premier-league/premier-league.component'
 
 const routes: Routes = [
-	{path: 'premier-league', component: ProfessionalLeagueComponent},
+	{path: 'premier-league', component: PremierLeagueComponent},
 	{path: '**', redirectTo: '/premier-league'}
 ];
 

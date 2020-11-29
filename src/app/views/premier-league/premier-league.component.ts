@@ -6,11 +6,11 @@ import { IFootballClub } from '../../dto/FootballClub';
 import {ModalService} from 'src/app/common-ui/modal/modal.service';
 
 @Component({
-	selector: 'app-professional-league',
-	templateUrl: './professional-league.component.html',
-	styleUrls: ['./professional-league.component.css']
+	selector: 'app-premier-league',
+	templateUrl: './premier-league.component.html',
+	styleUrls: ['./premier-league.component.css']
 })
-export class ProfessionalLeagueComponent implements OnInit {
+export class PremierLeagueComponent implements OnInit {
 	title: string = "Premier League"
 	errorNotify: boolean = false;
 	errorNotifyMessage: string = "";
