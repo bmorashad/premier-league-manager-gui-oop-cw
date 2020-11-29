@@ -1,2 +1,23 @@
-<premier-league [footballClubs]="footballClubs" [matches]="matches">
+<snackbar type="error" [(show)]="errorNotify">
+<span class="bold text5">Error: </span><span class="text5">{{errorNotifyMessage}}</span>
+<span class="bold text5">Success: </span><span class="text5">{{successMessage}}</span>
+</snackbar>
+<snackbar type="success" [(show)]="successNotify">
+<span class="bold text5">Success: </span><span class="text5">{{successMessage}}</span>
+</snackbar>
+<modals>
+<modal-confirm *ngIf="showGeneratedMatch" 
+	[title]="matchGeneratedTitle"(response)="confirmGeneratedMatch($event)">
+	<generated-match [match]="generatedMatch"></generated-match>
+</modal-confirm>
+<modal-error *ngIf="showGeneratedMatchError" [title]="matchGenerateErrorTitle" (response)="onCloseError()">
+	<div class="error-message-card">	
+		<p class="text5 -remove-margin"><span class="bold">Error: </span>{{errorMessage}}</p>
+	</div>
+</modal-error>
+</modals>
+<title1 title="Premier League Table"></title1>
+<section class="-margin-top-large -margin-bottom-small">
+<premier-league [footballClubs]="footballClubs" [matches]="matches" (match)="onMatchGenerate($event)">
 </premier-league>
+</section>
