@@ -19,7 +19,7 @@ export class SnackbarComponent implements OnChanges, OnDestroy{
 	}
 	ngOnChanges() {
 		this.clearTimer();
-		if(this.show) { this.timer = setTimeout(() => this.hideBar(), 6000)
+		if(this.show) { this.timer = setTimeout(() => this.hideBar(), 3000)
 
 		}
 	}

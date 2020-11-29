@@ -121,8 +121,9 @@ export class GenerateMatchButtonComponent {
 		if(matchDate.getTime() < Date.now()) {
 			return this.generateDateBySeason(season);
 		}
-		let month = matchDate.getMonth() + 1;
-		return matchDate.getFullYear() + "-" + month + "-" + matchDate.getDate();
+		let month = (matchDate.getMonth() + 1 + "").padStart(2, '0');
+		let day = (matchDate.getDate() + "").padStart(2, '0');
+		return matchDate.getFullYear() + "-" + month + "-" + day;
 	}
 	generateDay(year: number, month: number): number{
 		const maxDaysForMonth: number = this.getMaxDaysForMonth(year, month);

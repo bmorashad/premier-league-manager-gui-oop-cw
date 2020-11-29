@@ -1,32 +1,15 @@
-<snackbar type="error" [(show)]="errorNotify">
-<span class="bold text5">Error: </span><span class="text5">something went wrong when saving the match</span>
-</snackbar>
-<modals>
-<modal-confirm *ngIf="showGeneratedMatch" 
-	[title]="matchGeneratedTitle"(response)="confirmGeneratedMatch($event)">
-	<generated-match [match]="generatedMatch"></generated-match>
-</modal-confirm>
-<modal-error *ngIf="showGeneratedMatchError" [title]="matchGenerateErrorTitle" (response)="onCloseError()">
-	<div class="error-message-card">	
-		<p class="text5 -remove-margin"><span class="bold">Error: </span>{{errorMessage}}</p>
+<tabs>
+<tab title="Standings">
+<div class="wrapper">
+	<standings-table _id="standings-table" [footballClubs]="footballClubs"></standings-table>
+	<div class="right">
+		<generate-match-button (match)="onMatchGenerate($event)" [footballClubs]="footballClubs">
+			ADD MATCH
+		</generate-match-button>
 	</div>
-</modal-error>
-</modals>
-<title1 title="Premier League Table"></title1>
-<section class="-margin-top-large -margin-bottom-small">
-	<tabs>
-	<tab title="Standings">
-	<div class="wrapper">
-		<standings-table _id="standings-table" [footballClubs]="footballClubs"></standings-table>
-		<div class="right">
-			<generate-match-button (match)="onMatchGenerate($event)" [footballClubs]="footballClubs">
-				ADD MATCH
-			</generate-match-button>
-		</div>
-	</div>
-	</tab>
-	<tab title="Matches">
-	<match-list [matches]="matches"></match-list>
-	</tab>
-	</tabs>
-</section>
+</div>
+</tab>
+<tab title="Matches">
+<match-list [matches]="matches"></match-list>
+</tab>
+</tabs>
