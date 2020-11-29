@@ -16,7 +16,9 @@
 		</div>
 	</modal-error>
 </div>
-<title1 title="Premier League Table"></title1>
+<title1>
+<span>{{title}}</span><span class="season"> {{season}}</span>
+</title1>
 <section class="-margin-top-large -margin-bottom-small">
 	<premier-league [footballClubs]="footballClubs" [matches]="matches" (match)="onMatchGenerate($event)">
 	</premier-league>

@@ -97,6 +97,18 @@ section {
 .-margin-r-large {
 	margin-right: 15px;
 }
+.title-line {
+  position: relative;
+  margin-top: 8px;
+}
+.title-line::before {
+  content: "";
+  left: 2px;
+  top: -8px;
+  position: absolute;
+  width: 70px;
+  border-top: 3px solid var(--primary-purple);
+}
 /* text */
 .bold {
 	font-weight: 500 !important;

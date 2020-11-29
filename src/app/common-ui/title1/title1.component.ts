@@ -6,6 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./title1.component.css']
 })
 export class Title1Component {
-	@Input() title: string
   constructor() { }
 }

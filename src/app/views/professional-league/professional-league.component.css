@@ -1,0 +1,6 @@
+span.season {
+	font-size: 3.4rem;
+	font-weight: 900;
+	margin-left: 20px;
+	color: var(--primary-purple)
+}
