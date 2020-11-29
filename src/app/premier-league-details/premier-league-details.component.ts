@@ -3,11 +3,11 @@ import { IMatch } from '../dto/Match';
 import { IFootballClub } from '../dto/FootballClub';
 
 @Component({
-	selector: 'premier-league',
-	templateUrl: './premier-league.component.html',
-	styleUrls: ['./premier-league.component.css']
+	selector: 'premier-league-details',
+	templateUrl: './premier-league-details.component.html',
+	styleUrls: ['./premier-league-details.component.css']
 })
-export class PremierLeagueComponent implements OnInit {
+export class PremierLeagueDetailsComponent implements OnInit {
 	@Input() matches: IMatch[] = []
 	@Input() footballClubs: IFootballClub[] = []
 	@Output() match = new EventEmitter<IMatch>();

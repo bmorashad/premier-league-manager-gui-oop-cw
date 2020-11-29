@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PremierLeagueModule } from './premier-league/premier-league.module'
+import { PremierLeagueDetailsModule } from './premier-league-details/premier-league-details.module'
 import { CommonUiModule } from './common-ui/common-ui.module'
 import { ViewsModule } from './views/views.module'
 
@@ -17,7 +17,7 @@ import { ViewsModule } from './views/views.module'
     BrowserModule,
 	BrowserAnimationsModule,
     AppRoutingModule,
-	PremierLeagueModule,
+	PremierLeagueDetailsModule,
 	CommonUiModule,
 	HttpClientModule,
 	ViewsModule
