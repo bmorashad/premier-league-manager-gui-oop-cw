@@ -26,7 +26,7 @@ export class GenerateMatchButtonComponent {
 			return null;
 		}
 		let [teamA ,teamB]: IFootballClub[] = this.generateTwoTeams(this.footballClubs)
-		while(!this.isTeamDeferFromLastGeneratedMatch(teamA, teamB)) {
+		while(!this.isTeamDeferFromLastGeneratedMatch(teamA, teamB) && this.footballClubs.length > 2) {
 			[teamA, teamB] = this.generateTwoTeams(this.footballClubs);
 		}
 		let [teamAGoals, teamBGoals] = this.generateTwoGoals(maxGoals);
