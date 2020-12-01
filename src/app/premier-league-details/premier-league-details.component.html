@@ -2,14 +2,14 @@
 <tab title="Standings">
 <div class="wrapper">
 	<standings-table _id="standings-table" [footballClubs]="footballClubs"></standings-table>
-	<div class="right">
-		<generate-match-button (match)="onMatchGenerate($event)" [footballClubs]="footballClubs">
-			ADD MATCH
-		</generate-match-button>
-	</div>
 </div>
 </tab>
 <tab title="Matches">
 <match-list [matches]="matches"></match-list>
+<div class="right">
+	<button class="btn primary-btn" (click)="onAddMatch()">
+		ADD MATCH
+	</button>
+</div>
 </tab>
 </tabs>

@@ -4,13 +4,12 @@ import { StandingsTableComponent } from './standings-table/standings-table.compo
 import { PremierLeagueDetailsComponent } from './premier-league-details.component';
 import { CommonUiModule } from '../common-ui/common-ui.module';
 import { MatchDetailCardComponent } from './match-detail-card/match-detail-card.component';
-import { GenerateMatchButtonComponent } from './generate-match-button/generate-match-button.component';
 import { MatchListComponent } from './match-list/match-list.component';
 
 
 
 @NgModule({
-  declarations: [StandingsTableComponent, PremierLeagueDetailsComponent, MatchDetailCardComponent, GenerateMatchButtonComponent, MatchListComponent],
+  declarations: [StandingsTableComponent, PremierLeagueDetailsComponent, MatchDetailCardComponent, MatchListComponent],
   imports: [
     CommonModule,
 	CommonUiModule

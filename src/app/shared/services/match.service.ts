@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { IMatch } from '../../dto/Match'
 import { BASE_URL } from './env'
 import { Observable } from 'rxjs';
 import { Response } from './types';
@@ -15,8 +14,8 @@ export class MatchService {
 	all() : Observable<Response> {
 		return this.http.get<Response>(this.getUrl());
 	}
-	create(match: IMatch) : Observable<Response> {
-		return this.http.post<Response>(this.getUrl(), match);
+	addRandomMatch() : Observable<Response> {
+		return this.http.get<Response>(this.getUrl() + '/new/random');
 	}
 	private getUrl(): string {
 		return `${BASE_URL}${this.model}`;
