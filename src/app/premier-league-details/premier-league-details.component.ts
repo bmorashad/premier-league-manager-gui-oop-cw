@@ -161,6 +161,7 @@ export class PremierLeagueDetailsComponent implements OnInit {
 		.subscribe(res => {
 			if (res.status == 1) {
 				this.matches = this.addMatch(res.data.match)
+				this.loadClubs();
 			}
 		})
 	}
