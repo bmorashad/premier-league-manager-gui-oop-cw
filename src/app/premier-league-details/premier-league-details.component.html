@@ -5,11 +5,14 @@
 </div>
 </tab>
 <tab title="Matches">
-<match-list [matches]="matches"></match-list>
-<div class="right">
-	<button class="btn primary-btn" (click)="onAddMatch()">
-		ADD MATCH
-	</button>
+<div class="-flex">
+	<date-picker (date)="onDatePick($event)"></date-picker>
+	<div class="-flex-right">
+		<button class="btn primary-btn" (click)="onAddMatch()">
+			ADD MATCH
+		</button>
+	</div>
 </div>
+<match-list [matches]="matches"></match-list>
 </tab>
 </tabs>

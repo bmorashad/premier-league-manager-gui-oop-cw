@@ -34,7 +34,7 @@ export class PremierLeagueComponent implements OnInit {
 	}
 	confirmGeneratedMatch(response: boolean) : void {
 		if(response) {
-			this.matchService.create(this.generatedMatch).
+			this.matchService.addRandomMatch().
 				subscribe(res => {
 				if (res.status == 1) {
 					this.matches = this.addMatch(this.generatedMatch);

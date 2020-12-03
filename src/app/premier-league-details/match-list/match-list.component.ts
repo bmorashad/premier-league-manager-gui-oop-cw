@@ -6,26 +6,20 @@ import { IMatch } from '../../dto/Match'
   templateUrl: './match-list.component.html',
   styleUrls: ['./match-list.component.css']
 })
-export class MatchListComponent implements OnInit, OnChanges {
+
+export class MatchListComponent {
 	@Input() matches: IMatch[] = [];
+	@Input() pickedDate: Date = null;
 
 	matchesByDate: IMatch[];
-	pickedDate: Date = null;
 	noMatches: string = "No Matches";
 	noMatchesOnDate: string = "No matches have been played in the given date";
 
-	onDatePick(date: Date) : void {
-		this.changePickedDate(date);
-		this.setMatchesByDate(this.getMatchesByDate(date));
-	}
-	changePickedDate(date: Date) : void {
-		this.pickedDate = date;
-	}
-	setMatchesByDate(matches: IMatch[]) : void {
-		this.matchesByDate = matches;
-	}
 	sortMatchesByDate(matches: IMatch[]) : IMatch[] {
-		return this.matches.sort((m1 , m2) => Date.parse(m1.date) - Date.parse(m2.date));
+            return matches.sort((m1 , m2) => Date.parse(m1.date) - Date.parse(m2.date));
+	}
+	setMatches(matches: IMatch[]) {
+		this.matches = matches;
 	}
 	getMatchesByDate(date: Date) : IMatch[] {
 		if(date) {
@@ -36,17 +30,12 @@ export class MatchListComponent implements OnInit, OnChanges {
 		}
 		return this.matches;
 	}
-	setNoMatches(reason: string) {
-		this.noMatches = reason;
-	}
 	ngOnChanges() : void {
-		this.matchesByDate = this.sortMatchesByDate(this.matches);
+		let matchesByDate: IMatch[] = this.getMatchesByDate(this.pickedDate);
+		this.matchesByDate = this.sortMatchesByDate(matchesByDate);
 	}
 	ngOnInit() : void {
-		this.matchesByDate = this.sortMatchesByDate(this.matches);
+		let matchesByDate: IMatch[] = this.getMatchesByDate(this.pickedDate);
+		this.matchesByDate = this.sortMatchesByDate(matchesByDate);
 	}
-
-  constructor() { }
-
-
 }
