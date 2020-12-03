@@ -90,7 +90,10 @@ export class PremierLeagueComponent implements OnInit {
 				this.toggleModal("match-error")
 			}
 			this.isRandomMatchLoading = false;
-		}, () => this.showErrorNotify())
+		}, () => {
+			this.showErrorNotify()
+			this.isRandomMatchLoading = false;
+		})
 	}
 
 	onDatePick(date: Date) {
