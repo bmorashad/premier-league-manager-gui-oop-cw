@@ -52,6 +52,15 @@ section {
 	--margin-tb-medium: 40px;
 }
 /* util */
+.-flex {
+	display: flex;
+}
+.-flex-right {
+	margin-left: auto;
+}
+.-flex-left {
+	margin-right: auto;
+}
 .-position-relative {
 	position: relative;
 }
