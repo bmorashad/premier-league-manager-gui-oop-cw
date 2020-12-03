@@ -11,18 +11,20 @@ import {ModalService} from '../common-ui/modal/modal.service';
 	styleUrls: ['./premier-league.component.css']
 })
 export class PremierLeagueComponent implements OnInit {
+	// successNotify: boolean = false;
+	// successMessage: string = "match created successfully";
+	
 	match = new EventEmitter<IMatch>()
 	title: string = "Premier League Stats & Matches"
 	errorNotify: boolean = false;
-	errorNotifyMessage: string = "";
-	successNotify: boolean = false;
-	successMessage: string = "match created successfully";
+	errorNotifyMessage: string = "something has gone wrong in the server";
+
 	footballClubs: IFootballClub[] = [];
 	matches: IMatch[] = [];
 	matchGeneratedTitle: string = "Match Generated Successfully"
 	matchGenerateErrorTitle: string = "ERROR: Generating Match Failed :/"
 	errorMessage: string = ""
-	isMatchGeneratingLoading: boolean = false;
+	isRandomMatchLoading: boolean = false;
 	generatedMatch: IMatch = null;
 	matchDate: Date = null;
 
@@ -36,14 +38,11 @@ export class PremierLeagueComponent implements OnInit {
 	showErrorNotify() {
 		this.errorNotify = true;
 	}
-	showSuccessNotify() {
-		this.successNotify = true;
-	}
+	// showSuccessNotify() {
+		// this.successNotify = true;
+	// }
 	setErrorMessage(message: string) : void{
 		this.errorMessage = message;
-	}
-	setErrorNotifyMessage(message: string) : void{
-		this.errorNotifyMessage = message;
 	}
 	toggleModal(id: string): void {
 		this.modalService.toggle(id)
@@ -77,7 +76,7 @@ export class PremierLeagueComponent implements OnInit {
 
 
 	onAddMatch() {
-		this.isMatchGeneratingLoading = true;
+		this.isRandomMatchLoading = true;
 		this.matchService.addRandomMatch()
 		.subscribe(res => {
 			if (res.status == 1) {
@@ -90,8 +89,8 @@ export class PremierLeagueComponent implements OnInit {
 				this.setErrorMessage(res.errorMessage);
 				this.toggleModal("match-error")
 			}
-			this.isMatchGeneratingLoading = false;
-		})
+			this.isRandomMatchLoading = false;
+		}, () => this.showErrorNotify())
 	}
 
 	onDatePick(date: Date) {

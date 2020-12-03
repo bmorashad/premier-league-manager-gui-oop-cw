@@ -1,10 +1,10 @@
 div.generated-match-date {
   color: var(--dark-grey);
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 div.generated-match-detail {
   padding-top: 20px;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 span.generated-goals {
   font-weight: 600;
