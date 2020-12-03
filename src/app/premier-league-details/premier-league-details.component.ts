@@ -4,7 +4,6 @@ import { IFootballClub } from '../dto/FootballClub';
 import {FootballClubService} from '../shared/services/football-club.service';
 import {MatchService} from '../shared/services/match.service';
 import {ModalService} from '../common-ui/modal/modal.service';
-import { filter } from 'rxjs/operators'
 
 @Component({
 	selector: 'premier-league-details',
@@ -12,9 +11,14 @@ import { filter } from 'rxjs/operators'
 	styleUrls: ['./premier-league-details.component.css']
 })
 export class PremierLeagueDetailsComponent implements OnInit {
+	@Output() match = new EventEmitter<IMatch>()
+	title: string = "Premier League Stats & Matches"
+	errorNotify: boolean = false;
+	errorNotifyMessage: string = "";
+	successNotify: boolean = false;
+	successMessage: string = "match created successfully";
 	footballClubs: IFootballClub[] = [];
 	matches: IMatch[] = [];
-	title: string = "Premier League Stats & Matches"
 	matchGeneratedTitle: string = "Match Generated Successfully"
 	matchGenerateErrorTitle: string = "ERROR: Generating Match Failed :/"
 	errorMessage: string = ""
@@ -23,14 +27,27 @@ export class PremierLeagueDetailsComponent implements OnInit {
 	matchDate: Date = null;
 
 
-	toggleModal(id: string): void {
-		this.modalService.toggle(id)
-	}
+	
 	addMatch(match: IMatch): IMatch[] {
 		return [ ...this.matches, match];
 	}
 	constructor(private footballClubService: FootballClubService, private matchService: MatchService, private modalService: ModalService) { }
 
+	showErrorNotify() {
+		this.errorNotify = true;
+	}
+	showSuccessNotify() {
+		this.successNotify = true;
+	}
+	setErrorMessage(message: string) : void{
+		this.errorMessage = message;
+	}
+	setErrorNotifyMessage(message: string) : void{
+		this.errorNotifyMessage = message;
+	}
+	toggleModal(id: string): void {
+		this.modalService.toggle(id)
+	}
 	onRefresh(): void {
 		this.loadData()
 	}
@@ -66,16 +83,15 @@ export class PremierLeagueDetailsComponent implements OnInit {
 			if (res.status == 1) {
 				this.matches = this.addMatch(res.data.match)
 				this.loadClubs();
+				this.match.emit(res.data.match);
 				return;
+			} else {
+				this.match.emit(null)
 			}
-			// this.toggleModal("error")
 		})
 	}
 
 	onDatePick(date: Date) {
 		this.matchDate = date;
 	}
-
-
-
 }

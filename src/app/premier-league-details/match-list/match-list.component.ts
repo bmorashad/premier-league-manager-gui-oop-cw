@@ -9,7 +9,7 @@ import { IMatch } from '../../dto/Match'
 
 export class MatchListComponent {
 	@Input() matches: IMatch[] = [];
-	@Input() pickedDate: Date = null;
+	@Input() matchDate: Date = null;
 
 	matchesByDate: IMatch[];
 	noMatches: string = "No Matches";
@@ -24,18 +24,17 @@ export class MatchListComponent {
 	getMatchesByDate(date: Date) : IMatch[] {
 		if(date) {
 			return this.matches.filter(match =>  {
-				date.setHours(0, 0, 0, 0)
 				return Date.parse(match.date) == date.getTime()
 			});
 		}
 		return this.matches;
 	}
 	ngOnChanges() : void {
-		let matchesByDate: IMatch[] = this.getMatchesByDate(this.pickedDate);
+		let matchesByDate: IMatch[] = this.getMatchesByDate(this.matchDate);
 		this.matchesByDate = this.sortMatchesByDate(matchesByDate);
 	}
 	ngOnInit() : void {
-		let matchesByDate: IMatch[] = this.getMatchesByDate(this.pickedDate);
+		let matchesByDate: IMatch[] = this.getMatchesByDate(this.matchDate);
 		this.matchesByDate = this.sortMatchesByDate(matchesByDate);
 	}
 }

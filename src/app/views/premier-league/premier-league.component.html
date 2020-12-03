@@ -6,7 +6,7 @@
 </snackbar>
 <div class="modals">
 	<modal-confirm _id="match-confirm"
-				[title]="matchGeneratedTitle"(response)="confirmGeneratedMatch($event)">
+				[title]="matchGeneratedTitle">
 		<generated-match *ngIf="generatedMatch" [match]="generatedMatch"></generated-match>
 	</modal-confirm>
 	<modal-error _id="match-error" [title]="matchGenerateErrorTitle">
@@ -24,6 +24,7 @@
 			<icon-button icon="../../../assets/icons/refresh.png" (click)="onRefresh()"></icon-button>
 		</div>
 	</div>
-	<premier-league-details [footballClubs]="footballClubs" [matches]="matches" (match)="onMatchGenerate($event)">
+	<!-- <premier-league-details (match)="onMatchGenerate($event)"> -->
+	<premier-league-details>
 	</premier-league-details>
 </section>
