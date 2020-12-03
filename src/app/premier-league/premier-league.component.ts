@@ -6,11 +6,11 @@ import {MatchService} from '../shared/services/match.service';
 import {ModalService} from '../common-ui/modal/modal.service';
 
 @Component({
-	selector: 'premier-league-details',
-	templateUrl: './premier-league-details.component.html',
-	styleUrls: ['./premier-league-details.component.css']
+	selector: 'premier-league',
+	templateUrl: './premier-league.component.html',
+	styleUrls: ['./premier-league.component.css']
 })
-export class PremierLeagueDetailsComponent implements OnInit {
+export class PremierLeagueComponent implements OnInit {
 	@Output() match = new EventEmitter<IMatch>()
 	title: string = "Premier League Stats & Matches"
 	errorNotify: boolean = false;

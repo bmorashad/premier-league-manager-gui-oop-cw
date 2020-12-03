@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CommonUiModule } from '../common-ui/common-ui.module'
 import { GeneratedMatchComponent } from './generated-match/generated-match.component';
 import { PremierLeagueComponent } from './premier-league/premier-league.component';
-import { PremierLeagueDetailsModule } from '../premier-league-details/premier-league-details.module';
+import { PremierLeagueModule } from '../premier-league/premier-league.module';
 
 
 
@@ -11,7 +11,7 @@ import { PremierLeagueDetailsModule } from '../premier-league-details/premier-le
   declarations: [PremierLeagueComponent, GeneratedMatchComponent],
   imports: [
     CommonModule,
-	PremierLeagueDetailsModule,
+	PremierLeagueModule,
 	CommonUiModule
   ],
   exports: [
