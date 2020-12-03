@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalComponent } from '../modal.component';
 
 @Component({
@@ -11,9 +11,7 @@ export class ModalConfirmComponent extends ModalComponent {
 	onResponse(event: any) {
 		const isContainer = event.target.classList.contains('modal-container')
 		const isWrapper = event.target.classList.contains('modal-wrapper')
-		if(event.target == document.getElementById("confirm")) {
-			this.onConfirm();
-		} else if(event.target == document.getElementById("cancel")) {
+		if(event.target == document.getElementById("cancel")) {
 			this.onCloseResponse();
 		} else if(isWrapper || isContainer) {
 			this.onCloseResponse();
