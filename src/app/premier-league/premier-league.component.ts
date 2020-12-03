@@ -11,7 +11,7 @@ import {ModalService} from '../common-ui/modal/modal.service';
 	styleUrls: ['./premier-league.component.css']
 })
 export class PremierLeagueComponent implements OnInit {
-	@Output() match = new EventEmitter<IMatch>()
+	match = new EventEmitter<IMatch>()
 	title: string = "Premier League Stats & Matches"
 	errorNotify: boolean = false;
 	errorNotifyMessage: string = "";
@@ -83,11 +83,11 @@ export class PremierLeagueComponent implements OnInit {
 			if (res.status == 1) {
 				this.matches = this.addMatch(res.data.match)
 				this.loadClubs();
-				this.match.emit(res.data.match);
-				return;
+				this.toggleModal("match-success")
 			} else {
-				this.match.emit(null)
+
 			}
+			this.isMatchGeneratingLoading = false;
 		})
 	}
 
