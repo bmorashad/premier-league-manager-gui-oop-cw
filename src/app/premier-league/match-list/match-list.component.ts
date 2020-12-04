@@ -15,8 +15,12 @@ export class MatchListComponent {
 	noMatches: string = "No Matches";
 	noMatchesOnDate: string = "No matches have been played in the given date";
 
-	sortMatchesByDate(matches: IMatch[]) : IMatch[] {
+	sortMatchesByDate(matches: IMatch[], order: string) : IMatch[] {
+		if(order == "desc")
+            return matches.sort((m1 , m2) => Date.parse(m2.date) - Date.parse(m1.date));
+		else {
             return matches.sort((m1 , m2) => Date.parse(m1.date) - Date.parse(m2.date));
+		}
 	}
 	setMatches(matches: IMatch[]) {
 		this.matches = matches;
@@ -31,10 +35,10 @@ export class MatchListComponent {
 	}
 	ngOnChanges() : void {
 		let matchesByDate: IMatch[] = this.getMatchesByDate(this.matchDate);
-		this.matchesByDate = this.sortMatchesByDate(matchesByDate);
+		this.matchesByDate = this.sortMatchesByDate(matchesByDate, "desc");
 	}
 	ngOnInit() : void {
 		let matchesByDate: IMatch[] = this.getMatchesByDate(this.matchDate);
-		this.matchesByDate = this.sortMatchesByDate(matchesByDate);
+		this.matchesByDate = this.sortMatchesByDate(matchesByDate, "desc");
 	}
 }
