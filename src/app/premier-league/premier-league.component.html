@@ -1,9 +1,9 @@
 <snackbar type="error" [(show)]="errorNotify">
-<span class="bold text5">Error: </span><span class="text5">{{errorNotifyMessage}}</span>
+<span class="black text5">Error: </span><span class="text5">{{errorNotifyMessage}}</span>
 </snackbar>
-<!-- <snackbar type="success" [(show)]="successNotify"> -->
-<!-- <span class="bold text5">Success: </span><span class="text5">{{successMessage}}</span> -->
-<!-- </snackbar> -->
+<snackbar type="success" [(show)]="successNotify">
+<span class="black text5">Success: </span><span class="text5">{{successNotifyMessage}}</span>
+</snackbar>
 <div class="modals">
 	<modal-confirm _id="match-success"
 				[title]="matchGeneratedTitle">

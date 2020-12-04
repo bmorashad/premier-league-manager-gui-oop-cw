@@ -4,6 +4,7 @@ import { IFootballClub } from '../dto/FootballClub';
 import {FootballClubService} from '../shared/services/football-club.service';
 import {MatchService} from '../shared/services/match.service';
 import {ModalService} from '../common-ui/modal/modal.service';
+import {forkJoin} from 'rxjs';
 
 @Component({
 	selector: 'premier-league',
@@ -51,29 +52,45 @@ export class PremierLeagueComponent implements OnInit {
 	}
 	onRefresh(): void {
 		this.loadData()
+		.subscribe(res => {
+			const matchRes = res[0]
+			const clubRes = res[1]
+			if(matchRes.status == 1) {
+				this.matches = matchRes.data.matches;
+			}
+			if(clubRes.status == 1) {
+				this.footballClubs = clubRes.data.footballClubs;
+			}
+			this.showSuccessNotify("matches and football clubs re-loaded success")
+		}, () => {
+			this.showErrorNotify("failed during loading data, something is wrong with server :/")
+		})
 	}
 	loadData() {
-		this.loadMatches();
-		this.loadClubs();
+		const matches$ = this.loadMatches()
+		const footballClubs$ = this.loadClubs()
+		return forkJoin([matches$, footballClubs$])
 	}
 	loadMatches() {
-		this.matchService.all()
-		.subscribe(res => {
-			if(res.status == 1) {
-				this.matches = res.data.matches;
-			}
-		});
+		return this.matchService.all()
 	}
 	loadClubs() {
-		this.footballClubService.all()
-		.subscribe(res => {
-			if(res.status == 1) {
-				this.footballClubs = res.data.footballClubs;
-			}
-		});
+		return this.footballClubService.all()
 	}
 	ngOnInit(): void {
-		this.loadData();
+		this.loadData()
+		.subscribe(res => {
+			const matchRes = res[0]
+			const clubRes = res[1]
+			if(matchRes.status == 1) {
+				this.matches = matchRes.data.matches;
+			}
+			if(clubRes.status == 1) {
+				this.footballClubs = clubRes.data.footballClubs;
+			}
+		}, () => {
+			this.showErrorNotify("failed during loading data, something is wrong with server :/")
+		})
 	}
 
 

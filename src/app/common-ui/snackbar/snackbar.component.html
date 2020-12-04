@@ -3,7 +3,7 @@
 		<div class="snackbar-message">
 			<ng-content select="span"></ng-content>
 		</div>
-		<div class="snackbar-close-btn">
+		<div class="snackbar-close-btn" [ngClass]="{'close-error': type == 'error', 'close-success': type == 'success'}">
 			<button (click)="onClick()">✕</button>
 		</div>
 	</div>
