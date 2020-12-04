@@ -12,9 +12,6 @@ import {forkJoin} from 'rxjs';
 	styleUrls: ['./premier-league.component.css']
 })
 export class PremierLeagueComponent implements OnInit {
-	loadingGif: string = "../../assets/gifs/football-loading.gif"
-
-
 	successNotify: boolean = false;
 	successNotifyMessage: string = "";
 	errorNotify: boolean = false;
