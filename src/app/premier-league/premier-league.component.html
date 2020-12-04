@@ -26,7 +26,10 @@
 	</div>
 	<tabs>
 	<tab title="Standings">
-	<div class="wrapper">
+	<div class="center content-spinner" *ngIf="isDataLoading">
+		<img [src]="loadingGif" alt="loading">
+	</div>
+	<div class="wrapper" *ngIf="!isDataLoading">
 		<standings-table _id="standings-table" [footballClubs]="footballClubs"></standings-table>
 	</div>
 	</tab>
@@ -34,13 +37,16 @@
 	<div class="-flex">
 		<date-picker (pick)="onDatePick($event)"></date-picker>
 		<div class="-flex-right">
-			<button class="btn primary-btn" (click)="onAddMatch()" [disabled]="isRandomMatchLoading">
+			<button class="btn primary-btn" (click)="onAddMatch()" [disabled]="isRandomMatchLoading || isDataLoading">
 				<span [ngClass]="{'-hide': isRandomMatchLoading}">ADD MATCH</span>
 				<div [ngClass]="{'-hide': !isRandomMatchLoading, spinner: true, 'spinner-small': true}"></div>
 			</button>
 		</div>
 	</div>
-	<match-list [matches]="matches" [matchDate]="matchDate"></match-list>
+	<div class="center content-spinner" *ngIf="isDataLoading">
+		<img src="loadingGif">
+	</div>
+	<match-list [matches]="matches" [matchDate]="matchDate" *ngIf="!isDataLoading"></match-list>
 	</tab>
 	</tabs>
 </section>

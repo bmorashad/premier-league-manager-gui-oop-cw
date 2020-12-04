@@ -12,6 +12,9 @@ import {forkJoin} from 'rxjs';
 	styleUrls: ['./premier-league.component.css']
 })
 export class PremierLeagueComponent implements OnInit {
+	loadingGif: string = "../../assets/gifs/football-loading.gif"
+
+
 	successNotify: boolean = false;
 	successNotifyMessage: string = "";
 	errorNotify: boolean = false;
@@ -26,6 +29,7 @@ export class PremierLeagueComponent implements OnInit {
 	matchGenerateErrorTitle: string = "ERROR: Generating Match Failed :/"
 	errorMessage: string = ""
 	isRandomMatchLoading: boolean = false;
+	isDataLoading: boolean = false;
 	generatedMatch: IMatch = null;
 	matchDate: Date = null;
 
@@ -51,6 +55,7 @@ export class PremierLeagueComponent implements OnInit {
 		this.modalService.toggle(id)
 	}
 	onRefresh(): void {
+		this.isDataLoading = true;
 		this.loadData()
 		.subscribe(res => {
 			const matchRes = res[0]
@@ -62,8 +67,10 @@ export class PremierLeagueComponent implements OnInit {
 				this.footballClubs = clubRes.data.footballClubs;
 			}
 			this.showSuccessNotify("matches and football clubs re-loaded success")
+			this.isDataLoading = false;
 		}, () => {
 			this.showErrorNotify("failed during loading data, something is wrong with server :/")
+			this.isDataLoading = false;
 		})
 	}
 	loadData() {
@@ -78,6 +85,7 @@ export class PremierLeagueComponent implements OnInit {
 		return this.footballClubService.all()
 	}
 	ngOnInit(): void {
+		this.isDataLoading = true;
 		this.loadData()
 		.subscribe(res => {
 			const matchRes = res[0]
@@ -88,8 +96,10 @@ export class PremierLeagueComponent implements OnInit {
 			if(clubRes.status == 1) {
 				this.footballClubs = clubRes.data.footballClubs;
 			}
+			this.isDataLoading = false;
 		}, () => {
 			this.showErrorNotify("failed during loading data, something is wrong with server :/")
+			this.isDataLoading = false;
 		})
 	}
 
