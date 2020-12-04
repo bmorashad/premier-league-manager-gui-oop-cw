@@ -13,9 +13,9 @@ import { trigger, style, animate, transition } from '@angular/animations';
 	styleUrls: ['./premier-league.component.css'],
 	animations: [
 		trigger('slideIn', [
-			transition(':leave', [
+			transition('* => *', [
 				style({transform: 'translateY(30px)', opacity: '0'}),
-				animate('0.2s', style({transform: 'translateY(0)', opacity: '1'}))
+				animate('0.7s', style({transform: 'translateY(0)', opacity: '1'}))
 			])
 		])
 	]

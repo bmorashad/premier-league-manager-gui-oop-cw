@@ -29,8 +29,8 @@
 	<div class="center content-spinner" *ngIf="isDataLoading">
 		<img src="../../assets/gifs/football-loading.gif" alt="loading">
 	</div>
-	<div class="wrapper" *ngIf="!isDataLoading">
-		<standings-table [@slideIn]="footballClubs" _id="standings-table" [footballClubs]="footballClubs"></standings-table>
+	<div class="wrapper" [@slideIn]="matches" *ngIf="!isDataLoading">
+		<standings-table  _id="standings-table" [footballClubs]="footballClubs"></standings-table>
 	</div>
 	</tab>
 	<tab title="Matches">
