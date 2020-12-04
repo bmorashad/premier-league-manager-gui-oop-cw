@@ -32,12 +32,12 @@ import {
 			})),
 			transition('hide <=> show', [
 				group([
-					query('@popOverState', [
+					query('@popOverState, @popOutState', [
 						animateChild()
 					]),
 					animate('150ms ease-in')
 				])
-			]),
+			])
 		]),
 		trigger('popOverState', [
 			state('show', style({
@@ -49,7 +49,17 @@ import {
 				opacity: '0'
 			})),
 			transition('hide => show', animate('100ms 100ms ease-in') ),
-			transition('show => hide', animate('150ms ease-out'))
+		]),
+		trigger('popOutState', [
+			state('show', style({
+				transform: 'translateY(0)',
+				opacity: '1',
+			})),
+			state('hide', style({
+				transform: 'translateY(100%)',
+				opacity: '0'
+			})),
+			transition('show => hide', animate('100ms ease-out') ),
 		])
 	]
 })
