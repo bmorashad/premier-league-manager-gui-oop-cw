@@ -1,4 +1,5 @@
-<div class="modal-container" [id]="_id" (click)="onResponse($event)" [hidden]="!show">
+<div [@fadeIn]="showName" class="modal-container" [id]="_id" (click)="onResponse($event)" [style.visibility]="!show ? 'hidden' : 'visible'">
+<!-- <div class="modal-container" [id]="_id" (click)="onResponse($event)" [style.visibility]="!show ? 'hidden' : 'visible'"> -->
 	<div class="modal-wrapper">
 		<div [@popOverState]="showName" class="modal">
 			<div class="modal-title">

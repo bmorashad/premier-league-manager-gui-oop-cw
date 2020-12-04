@@ -24,21 +24,23 @@ import {
 			state('hide', style({
 				transform: 'scale(0)'
 			})),
-			transition('hide => show', animate('100ms ease-in') ),
+			transition('hide => show', animate('100ms 100ms ease-in') ),
 			transition('show => hide', animate('100ms ease-out'))
-		])
-		// trigger('containerDisappear', [
-			// state('show', style({
+		]),
+		trigger('fadeIn', [
+			state('show', style({
 				// display: 'block',
-				// opacity: '1'
-			// })),
-			// state('hide', style({
+				visibility: 'visible',
+				opacity: '1'
+			})),
+			state('hide', style({
 				// display: 'none',
-				// opacity: '0'
-			// })),
-			// transition('hide => show', animate('100ms ease-in') ),
-			// transition('show => hide', animate('100ms ease-out'))
-		// ])
+				visibility: 'hidden',
+				opacity: '0'
+			})),
+			transition('hide => show', animate('100ms ease-in') ),
+			transition('show => hide', animate('100ms 100ms ease-out'))
+		])
 	]
 })
 export class ModalComponent  implements OnInit{
