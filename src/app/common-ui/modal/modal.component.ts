@@ -9,7 +9,10 @@ import {
 	state,
 	style,
 	animate,
-	transition
+	transition,
+	group,
+	query,
+	animateChild
 } from '@angular/animations'
 
 @Component({
@@ -17,29 +20,36 @@ import {
 	templateUrl: './modal.component.html',
 	styleUrls: ['./modal.component.css'],
 	animations: [
-		trigger('popOverState', [
-			state('show', style({
-				transform: 'scale(1)'
-			})),
-			state('hide', style({
-				transform: 'scale(0)'
-			})),
-			transition('hide => show', animate('100ms 100ms ease-in') ),
-			transition('show => hide', animate('100ms ease-out'))
-		]),
 		trigger('fadeIn', [
 			state('show', style({
-				// display: 'block',
 				visibility: 'visible',
-				opacity: '1'
+				opacity: '1',
 			})),
 			state('hide', style({
-				// display: 'none',
 				visibility: 'hidden',
+				opacity: '0',
+				transition: 'visibility 0s, opacity 0.5s linear'
+			})),
+			transition('hide <=> show', [
+				group([
+					query('@popOverState', [
+						animateChild()
+					]),
+					animate('150ms ease-in')
+				])
+			]),
+		]),
+		trigger('popOverState', [
+			state('show', style({
+				transform: 'translateY(0)',
+				opacity: '1',
+			})),
+			state('hide', style({
+				transform: 'translateY(-100%)',
 				opacity: '0'
 			})),
-			transition('hide => show', animate('100ms ease-in') ),
-			transition('show => hide', animate('100ms 100ms ease-out'))
+			transition('hide => show', animate('100ms 100ms ease-in') ),
+			transition('show => hide', animate('150ms ease-out'))
 		])
 	]
 })
@@ -50,7 +60,7 @@ export class ModalComponent  implements OnInit{
 	status: Observable<ModalAction>;
 	show: boolean = false;
 	// @ContentChildren("modal-container") modals: QueryList<ModalErrorComponent | ModalConfirmComponent>
-	
+
 
 	get showName() {
 		return this.show ? 'show' : 'hide'
