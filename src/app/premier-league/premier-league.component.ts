@@ -5,18 +5,27 @@ import {FootballClubService} from '../shared/services/football-club.service';
 import {MatchService} from '../shared/services/match.service';
 import {ModalService} from '../common-ui/modal/modal.service';
 import {forkJoin} from 'rxjs';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
 	selector: 'premier-league',
 	templateUrl: './premier-league.component.html',
-	styleUrls: ['./premier-league.component.css']
+	styleUrls: ['./premier-league.component.css'],
+	animations: [
+		trigger('slideIn', [
+			transition(':leave', [
+				style({transform: 'translateY(30px)', opacity: '0'}),
+				animate('0.2s', style({transform: 'translateY(0)', opacity: '1'}))
+			])
+		])
+	]
 })
 export class PremierLeagueComponent implements OnInit {
 	successNotify: boolean = false;
 	successNotifyMessage: string = "";
 	errorNotify: boolean = false;
 	errorNotifyMessage: string = "";
-	
+
 	match = new EventEmitter<IMatch>()
 	title: string = "Premier League Stats & Matches"
 
@@ -31,7 +40,7 @@ export class PremierLeagueComponent implements OnInit {
 	matchDate: Date = null;
 
 
-	
+
 	addMatch(match: IMatch): IMatch[] {
 		return [ ...this.matches, match];
 	}
