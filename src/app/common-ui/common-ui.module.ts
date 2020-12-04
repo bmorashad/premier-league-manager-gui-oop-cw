@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ModalErrorComponent } from './modal/modal-error/modal-error.component';
 import { ModalConfirmComponent } from './modal/modal-confirm/modal-confirm.component';
 import { ModalComponent } from './modal/modal.component';
@@ -19,7 +18,6 @@ import { IconButtonComponent } from './icon-button/icon-button.component';
   declarations: [ ModalConfirmComponent, ModalErrorComponent, ModalComponent, NavbarComponent, Title1Component, SnackbarComponent, DatePickerComponent, TabsComponent, TabComponent, PrimaryButtonComponent, IconButtonComponent ],
   imports: [
     CommonModule,
-	BrowserAnimationsModule
   ],
   exports: [
 	  ModalConfirmComponent,
