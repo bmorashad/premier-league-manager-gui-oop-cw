@@ -7,6 +7,7 @@ div.match-date {
   padding: 10px 20px;
   background: var(--highlight-white);
   border-bottom: 1px solid var(--dark-white);
+  color: var(--primary-grey)
 }
 div.match-detail {
   display: flex;
