@@ -16,8 +16,8 @@ div.icon-button > button:active {
 	background: rgba(0, 0, 0, 0.3)
 }
 div.icon-button > button:focus {
-	outline: 1;
-	outline-color: rgba(0, 0, 0, 0.2);
+	outline: 2px solid rgba(0, 0, 0, 0.2);
+	outline-offset: 0;
 	/* background: rgba(0, 0, 0, 0.3) */
 }
 div.icon-button button > img {

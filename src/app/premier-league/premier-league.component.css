@@ -10,7 +10,8 @@ span.season {
 }
 .refresh-button-wrapper {
   position: relative;
-  top: 2px;
+  top: 0px;
+  left: -1px;
   display: flex;
   justify-content: flex-end;
 }
@@ -25,6 +26,6 @@ span.season {
 }
 @media only screen and (max-width: 600px) {
 	.refresh-button-wrapper {
-		top: -4px;
+		top: -6px;
 	}
 }
