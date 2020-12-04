@@ -1,9 +1,9 @@
 <section class="-margin-top-medium -margin-bottom-medium">
-	<div *ngIf="matchesByDate.length == 0; else elseBlock" class="no-matches center -margin-t-large">
+	<div *ngIf="matchesByDate.length == 0" class="no-matches center -margin-t-large">
 		<h2 *ngIf="matches.length == 0" class="text2">{{noMatches}}</h2>
 		<h2 *ngIf="matchDate && matches.length && matchesByDate.length == 0" class="text2">{{noMatchesOnDate}}</h2>
 	</div>
-	<div #elseBlock [@stagger]="matches" class="match-card-showcase">
+	<div [@stagger]="matches" class="match-card-showcase">
 		<match-detail-card *ngFor="let match of matchesByDate" [match]="match"></match-detail-card>
 	</div>
 </section>

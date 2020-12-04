@@ -9,7 +9,7 @@ import { trigger, style, animate, transition, query, stagger } from '@angular/an
   animations: [
 	  trigger('stagger', [
 		  transition('* => *', [
-			  query(':leave', [
+			  query(':enter', [
 				  style({transform: 'translateY(30px)', opacity: '0'}),
 				  stagger(100, [animate('0.2s', style({transform: 'translateY(0)', opacity: '1'}))])
 			  ], {optional: true})
