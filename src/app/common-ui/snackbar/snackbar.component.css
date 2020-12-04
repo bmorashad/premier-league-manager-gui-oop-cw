@@ -52,16 +52,17 @@
   /* color: var(--highlight-red); */
   color: var(--secondary-red);
   font-size: 1.6rem;
-  /* border: 1px solid var(--secondary-red); */
   border: 1px solid var(--secondary-red);
 }
 .close-success button  {
   color: var(--primary-green);
 }
 .success {
-  background: var(--secondary-green);
+  /* background: var(--secondary-green); */
+  background: var(--highlight-green);
   opacity: 0.95;
-  color: var(--highlight-green);
+  /* color: var(--highlight-green); */
+  color: var(--primary-green);
   font-size: 1.6rem;
-  border: 1px solid var(--secondary-green);
+  border: 1px solid var(--primary-green);
 }
