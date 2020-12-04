@@ -14,8 +14,8 @@ import { trigger, style, animate, transition } from '@angular/animations';
 	animations: [
 		trigger('slideIn', [
 			transition('* => *', [
-				style({transform: 'translateY(30px)', opacity: '0'}),
-				animate('0.7s', style({transform: 'translateY(0)', opacity: '1'}))
+				style({transform: 'translateX(-30px)', opacity: '0'}),
+				animate('0.2s', style({transform: 'translateX(0)', opacity: '1'}))
 			])
 		])
 	]
@@ -38,7 +38,11 @@ export class PremierLeagueComponent implements OnInit {
 	isDataLoading: boolean = false;
 	generatedMatch: IMatch = null;
 	matchDate: Date = null;
+	footballClubsSortBy: string = "POINTS"; 
 
+	onSortByChange(event: any) {
+		this.footballClubsSortBy = event.target.value.toUpperCase();
+	}
 
 
 	addMatch(match: IMatch): IMatch[] {
@@ -118,7 +122,11 @@ export class PremierLeagueComponent implements OnInit {
 				let generatedMatch = res.data.match
 				this.generatedMatch = generatedMatch
 				this.matches = this.addMatch(generatedMatch)
-				this.loadClubs();
+				this.loadClubs().subscribe( res => {
+					if(res.status == 1) {
+						this.footballClubs = res.data.footballClubs
+					}
+				});
 				this.toggleModal("match-success")
 			} else {
 				this.setErrorMessage(res.errorMessage);

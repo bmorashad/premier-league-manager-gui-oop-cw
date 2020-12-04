@@ -29,8 +29,16 @@
 	<div class="center content-spinner" *ngIf="isDataLoading">
 		<img src="../../assets/gifs/football-loading.gif" alt="loading">
 	</div>
-	<div class="wrapper" [@slideIn]="matches" *ngIf="!isDataLoading">
-		<standings-table  _id="standings-table" [footballClubs]="footballClubs"></standings-table>
+	<div class="wrapper"  *ngIf="!isDataLoading">
+		<label class="small light" for="sort">Sort by: </label>
+		<select (change)="onSortByChange($event)" class="select" id="sort">
+			<option value="points">Points</option>
+			<option value="goals">Goals</option>
+			<option value="matches">Matches</option>
+		</select>
+		<div [@slideIn]="matches">
+		<standings-table  _id="standings-table" [footballClubs]="footballClubs" [sortBy]="footballClubsSortBy"></standings-table>
+		</div>
 	</div>
 	</tab>
 	<tab title="Matches">

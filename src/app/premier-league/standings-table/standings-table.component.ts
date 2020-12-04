@@ -9,7 +9,7 @@ import { IFootballClub } from '../../dto/FootballClub';
 export class StandingsTableComponent implements OnInit, OnChanges{
 	@Input() footballClubs: IFootballClub[] = [];
 	@Input() _id: string;
-	sortBy: string = "POINTS";
+	@Input() sortBy: string = "POINTS";
 
 	fields: string[] = ["Club", "MP", "W", "D", "L", "GS", "GA", "GF", "Pts"]
 
@@ -17,10 +17,6 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 		this.sortClubs(this.footballClubs, this.sortBy);
 	}
 	ngOnChanges() : void {
-		this.sortClubs(this.footballClubs, this.sortBy);
-	}
-	onSortByChange(event: any) {
-		this.sortBy = event.target.value.toUpperCase();
 		this.sortClubs(this.footballClubs, this.sortBy);
 	}
 	sortClubs(footballClubs: IFootballClub[], sortBy: string) : void{
