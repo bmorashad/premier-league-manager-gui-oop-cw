@@ -11,13 +11,13 @@ import {ModalService} from '../common-ui/modal/modal.service';
 	styleUrls: ['./premier-league.component.css']
 })
 export class PremierLeagueComponent implements OnInit {
-	// successNotify: boolean = false;
-	// successMessage: string = "match created successfully";
+	successNotify: boolean = false;
+	successNotifyMessage: string = "";
+	errorNotify: boolean = false;
+	errorNotifyMessage: string = "";
 	
 	match = new EventEmitter<IMatch>()
 	title: string = "Premier League Stats & Matches"
-	errorNotify: boolean = false;
-	errorNotifyMessage: string = "something has gone wrong in the server";
 
 	footballClubs: IFootballClub[] = [];
 	matches: IMatch[] = [];
@@ -35,12 +35,14 @@ export class PremierLeagueComponent implements OnInit {
 	}
 	constructor(private footballClubService: FootballClubService, private matchService: MatchService, private modalService: ModalService) { }
 
-	showErrorNotify() {
+	showErrorNotify(message: string) {
+		this.errorNotifyMessage = message;
 		this.errorNotify = true;
 	}
-	// showSuccessNotify() {
-		// this.successNotify = true;
-	// }
+	showSuccessNotify(message: string) {
+		this.successNotifyMessage = message;
+		this.successNotify = true;
+	}
 	setErrorMessage(message: string) : void{
 		this.errorMessage = message;
 	}
@@ -91,7 +93,7 @@ export class PremierLeagueComponent implements OnInit {
 			}
 			this.isRandomMatchLoading = false;
 		}, () => {
-			this.showErrorNotify()
+			this.showErrorNotify("something is wrong with server :/")
 			this.isRandomMatchLoading = false;
 		})
 	}
