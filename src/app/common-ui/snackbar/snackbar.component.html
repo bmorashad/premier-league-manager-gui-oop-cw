@@ -1,4 +1,4 @@
-<div [hidden]="!show" class="snackbar">
+<div [@popOverState]="showState" [style.visibility]="!show ? 'hidden' : 'visible'" class="snackbar">
 	<div class="snackbar-body" [ngClass]="{error: type == 'error', info: type == 'info', success: type == 'success'}">
 		<div class="snackbar-message">
 			<ng-content select="span"></ng-content>
