@@ -23,3 +23,8 @@ span.season {
 		min-width: auto;
 	}
 }
+@media only screen and (max-width: 600px) {
+	.refresh-button-wrapper {
+		top: -4px;
+	}
+}
