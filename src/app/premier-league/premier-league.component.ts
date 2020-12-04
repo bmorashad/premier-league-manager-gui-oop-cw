@@ -76,7 +76,6 @@ export class PremierLeagueComponent implements OnInit {
 
 
 	onAddMatch() {
-		this.toggleModal("match-success")
 		this.isRandomMatchLoading = true;
 		this.matchService.addRandomMatch()
 		.subscribe(res => {
