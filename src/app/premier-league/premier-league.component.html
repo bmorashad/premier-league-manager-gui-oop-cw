@@ -34,7 +34,7 @@
 	<div class="-flex">
 		<date-picker (pick)="onDatePick($event)"></date-picker>
 		<div class="-flex-right">
-			<button class="btn primary-btn" (click)="onAddMatch()">
+			<button class="btn primary-btn" (click)="onAddMatch()" [disabled]="isRandomMatchLoading">
 				<span [ngClass]="{'-hide': isRandomMatchLoading}">ADD MATCH</span>
 				<div [ngClass]="{'-hide': !isRandomMatchLoading, spinner: true, 'spinner-small': true}"></div>
 			</button>
