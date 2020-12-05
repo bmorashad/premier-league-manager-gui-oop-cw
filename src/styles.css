@@ -348,14 +348,15 @@ div.error-message-card {
 	justify-content: center;
 	align-items: center;
 	vertical-align: text-bottom;
-	/* border: 0.25em solid currentColor; */
+	border: 0.25em solid currentColor;
 	border-right-color: transparent;
-	border-radius: 20%;
+	border-radius: 50%;
 	-webkit-animation: spinner-border 0.75s linear infinite;
 	animation: spinner-border 0.75s linear infinite;
 }
 .spinner-medium {
 	border: 0.45em solid currentColor;
+	border-radius: 20%;
 	width: 6rem;
 	height: 6rem;
 }
