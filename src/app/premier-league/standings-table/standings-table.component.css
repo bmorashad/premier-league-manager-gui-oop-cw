@@ -37,7 +37,7 @@ table.flat-table td:nth-child(1) {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-table.flat-table td:nth-last-child(1) > span {
+table.flat-table td:nth-last-child(2) > span {
 	font-weight: 600;
 	color: var(--primary-green);
 }
@@ -57,10 +57,10 @@ table.flat-table td {
 table.flat-table tbody tr:nth-child(2) td:nth-child(1) {
 	border-left: 2px solid var(--secondary-purple) ;
 }
-table.flat-table tbody tr:nth-child(4) td:nth-child(1) {
+table.flat-table tbody tr:nth-child(5) td:nth-child(1) {
 	border-left: 2px solid var(--secondary-purple) ;
 }
-table.flat-table tbody tr:nth-child(6) td:nth-child(1) {
+table.flat-table tbody tr:nth-child(8) td:nth-child(1) {
 	border-left: 2px solid var(--secondary-purple) ;
 }
 table.flat-table tbody tr:nth-last-child(2) {
@@ -92,3 +92,35 @@ tr.no-content th > span {
 	font-size: 2rem;
 	font-weight: 400;
 } 
+div.form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div.form-container span {
+	font-size: 1.6rem;
+	font-weight: 600;
+	width: 2.3rem;
+	height: 2.3rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 13px;
+	margin-right: 5px;
+}
+div.form-container span:nth-last-child(1) {
+	margin-right: 0px;
+}
+span.lost-match {
+	color: var(--primary-white);
+	background: var(--primary-red);
+}
+span.win-match {
+	color: var(--primary-white);
+	background: var(--primary-green);
+}
+span.draw-match {
+	color: var(--primary-grey);
+	background: var(--light-grey);
+}

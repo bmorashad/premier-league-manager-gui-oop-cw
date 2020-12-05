@@ -58,7 +58,16 @@ section {
 		padding-right: 100px;
 	}
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
+	.content {
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+}
+@media only screen and (max-width: 720px) {
+	html {
+		font-size: 9px;
+	}
 	.content {
 		padding-left: 40px;
 		padding-right: 40px;
@@ -66,7 +75,7 @@ section {
 }
 @media only screen and (max-width: 600px) {
 	html {
-		font-size: 9px;
+		font-size: 7px;
 	}
 	.content {
 		padding-left: 20px;

@@ -3,7 +3,7 @@
 		<table [attr.id]="_id" class="flat-table">
 			<thead>
 				<tr>
-					<th *ngFor="let field of fields" class="table-heading"><span class="text4">{{field}}</span></th>
+					<th *ngFor="let field of fields" class="table-heading"><span class="text5">{{field}}</span></th>
 				</tr>
 			</thead>
 			<ng-container *ngIf="footballClubs.length == 0">
@@ -18,18 +18,29 @@
 				<ng-container *ngFor="let footballClub of footballClubs">
 					<tr class="spacer"></tr>
 					<tr>
-						<td><span class="text4">{{footballClub.clubName}}</span></td>
-						<td><span class="text4">{{footballClub.matchCount}}</span></td>
-						<td><span class="text4">{{footballClub.winCount}}</span></td>
-						<td><span class="text4">{{footballClub.drawCount}}</span></td>
-						<td><span class="text4">{{footballClub.defeatCount}}</span></td>
-						<td><span class="text4">{{footballClub.goalsScored}}</span></td>
-						<td><span class="text4">{{footballClub.goalsAgainst}}</span></td>
-						<td><span class="text4">{{footballClub.goalsDifference}}</span></td>
-						<td><span class="text4">{{footballClub.points}}</span></td>
+						<td><span class="text5">{{footballClub.clubName}}</span></td>
+						<td><span class="text5">{{footballClub.matchCount}}</span></td>
+						<td><span class="text5">{{footballClub.winCount}}</span></td>
+						<td><span class="text5">{{footballClub.drawCount}}</span></td>
+						<td><span class="text5">{{footballClub.defeatCount}}</span></td>
+						<td><span class="text5">{{footballClub.goalsScored}}</span></td>
+						<td><span class="text5">{{footballClub.goalsAgainst}}</span></td>
+						<td><span class="text5">{{footballClub.goalsDifference}}</span></td>
+						<td><span class="text5">{{footballClub.points}}</span></td>
+						<td>
+							<div class="form-container">
+								<ng-container *ngFor="let match of getMatchesByClub(footballClub, 3)">
+									<span class="draw-match" *ngIf="isMatchDraw(match)">D</span>
+									<span class="win-match" *ngIf="isTeamWon(match, footballClub); else lostMatch">W</span>
+								</ng-container>
+							</div>
+						</td>
 					</tr>
+					<tr class="spacer"></tr>
 				</ng-container>
-				<tr class="spacer"></tr>
+				<ng-template #lostMatch>
+					<span class="lost-match">L</span>
+				</ng-template>
 			</tbody>
 		</table>
 	</div>
