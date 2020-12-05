@@ -14,7 +14,7 @@
 					</th>
 				</tr>
 			</ng-container>
-			<tbody>
+			<tbody [@stagger]="footballClubs">
 				<ng-container *ngFor="let footballClub of footballClubs">
 					<tr class="spacer"></tr>
 					<tr>

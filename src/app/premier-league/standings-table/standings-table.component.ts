@@ -1,10 +1,21 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { IFootballClub } from '../../dto/FootballClub';
+import { trigger, style, animate, transition, query, stagger } from '@angular/animations';
 
 @Component({
 	selector: 'standings-table',
 	templateUrl: './standings-table.component.html',
-	styleUrls: ['./standings-table.component.css']
+	styleUrls: ['./standings-table.component.css'],
+	animations: [
+		trigger('stagger', [
+			transition('* => *', [
+				query(':enter', [
+					style({opacity: '0'}),
+					stagger(50, [animate('0.4s', style({opacity: '1'}))])
+				], {optional: true})
+			])
+		])
+	]
 })
 export class StandingsTableComponent implements OnInit, OnChanges{
 	@Input() footballClubs: IFootballClub[] = [];
@@ -31,13 +42,13 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 		}
 	}
 	sortClubsByPoints(footballClubs: IFootballClub[]) : IFootballClub[] {
-			return footballClubs.sort((clubA, clubB) => clubB.points - clubA.points)
+		return footballClubs.sort((clubA, clubB) => clubB.points - clubA.points)
 	}
 	sortClubsByGoals(footballClubs: IFootballClub[]) : IFootballClub[] {
-			return footballClubs.sort((clubA, clubB) => clubB.goalsScored - clubA.goalsScored)
+		return footballClubs.sort((clubA, clubB) => clubB.goalsScored - clubA.goalsScored)
 	}
 	sortClubsByMatches(footballClubs: IFootballClub[]) : IFootballClub[] {
-			return footballClubs.sort((clubA, clubB) => clubB.matchCount - clubA.matchCount)
+		return footballClubs.sort((clubA, clubB) => clubB.matchCount - clubA.matchCount)
 	}
 	constructor() { }
 

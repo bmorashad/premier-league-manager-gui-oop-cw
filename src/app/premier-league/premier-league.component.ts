@@ -5,20 +5,11 @@ import {FootballClubService} from '../shared/services/football-club.service';
 import {MatchService} from '../shared/services/match.service';
 import {ModalService} from '../common-ui/modal/modal.service';
 import {forkJoin} from 'rxjs';
-import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
 	selector: 'premier-league',
 	templateUrl: './premier-league.component.html',
-	styleUrls: ['./premier-league.component.css'],
-	animations: [
-		trigger('slideIn', [
-			transition('* => *', [
-				style({transform: 'translateX(-30px)', opacity: '0'}),
-				animate('0.2s', style({transform: 'translateX(0)', opacity: '1'}))
-			])
-		])
-	]
+	styleUrls: ['./premier-league.component.css']
 })
 export class PremierLeagueComponent implements OnInit {
 	successNotify: boolean = false;
