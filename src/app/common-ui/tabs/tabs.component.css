@@ -15,6 +15,10 @@ div.active {
 	/* border-bottom: 4px solid var(--secondary-black); */
 	border-bottom: 4px solid var(--primary-purple);	
 }
+div.tab:active {
+	background: rgba(75, 75, 75, 0.1);
+	transition: 0.1s;
+}
 div.tab:hover {
 	cursor: pointer;
 	color: var(--primary-black);
