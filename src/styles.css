@@ -3,6 +3,7 @@
 	box-sizing: border-box;
 }
 html {
+	color: var(--primary-black);
 	font-family: "Yantramanav", sans-serif;
 	font-size: 10px;
 	background: var(--secondary-white);
@@ -134,6 +135,7 @@ section {
 }
 /* 46 */
 h1.title {
+	color: var(--primary-black);
 	font-size: 3.6rem;
 	font-weight: 500;
 }
