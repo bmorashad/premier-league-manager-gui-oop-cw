@@ -9,6 +9,20 @@ div.match-date {
   border-bottom: 1px solid var(--dark-white);
   color: var(--primary-grey)
 }
+p.match-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: fit-content; */
+}
+span.team-name {
+	max-width: clamp(10ch, 30%, 22ch);
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    text-overflow: ellipsis
+}
 div.match-detail {
   display: flex;
   justify-content: center;
@@ -25,5 +39,6 @@ span.goals-sep {
   color: var(--primary-orange);
 }
 span.winningTeam {
+	margin-right: 5px;
 	color: var(--primary-purple)
 }
