@@ -7,7 +7,7 @@ div.tab {
 	line-height: 0;
 	padding-right: 30px;
 	padding-left: 30px;
-	margin-bottom: -2px;
+	margin-bottom: -1px;
 	color: var(--light-black);
 }
 div.active {
@@ -23,6 +23,7 @@ div.tab:active {
 	border-bottom: 4px solid rgba(41, 87, 255, 0.4);	
 }
 div.tab:hover {
+	transition: 0.2s;
 	cursor: pointer;
 	color: var(--primary-black);
 	/* border-bottom: 4px solid rgba(0, 0, 0, 0.3); */
