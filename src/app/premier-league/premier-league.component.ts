@@ -56,9 +56,9 @@ export class PremierLeagueComponent implements OnInit {
 		this.modalService.toggle(id)
 	}
 	onRefresh(): void {
+		this.isDataLoading = true;
 		this.loadData()
 		.subscribe(res => {
-			this.isDataLoading = true;
 			const matchRes = res[0]
 			const clubRes = res[1]
 			if(matchRes.status == 1) {
@@ -71,6 +71,7 @@ export class PremierLeagueComponent implements OnInit {
 			this.isDataLoading = false;
 		}, () => {
 			this.showErrorNotify("failed during loading data, something is wrong with server :/")
+			this.isDataLoading = false;
 		})
 	}
 	loadData() {
