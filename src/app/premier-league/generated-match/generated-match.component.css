@@ -3,8 +3,25 @@ div.generated-match-date {
   /* padding-bottom: 10px; */
 }
 div.generated-match-detail {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   /* padding-bottom: 30px; */
+}
+p.match-info {
+  /* display: flex; */
+  align-items: center;
+  /* justify-content: center; */
+  width: fit-content;
+}
+span.team-name {
+	/* max-width: clamp(12ch, 30%, 22ch); */
+	position: relative;
+	top: 8px;
+	max-width: 12ch;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 0;
+	text-overflow: ellipsis
 }
 span.generated-goals {
   font-weight: 600;
