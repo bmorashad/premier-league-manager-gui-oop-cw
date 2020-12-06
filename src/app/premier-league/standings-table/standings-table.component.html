@@ -30,17 +30,23 @@
 						<td>
 							<div class="form-container">
 								<ng-container *ngFor="let match of getMatchesByClub(footballClub, 3)">
-									<span class="draw-match" *ngIf="isMatchDraw(match)">D</span>
-									<span class="win-match" *ngIf="isTeamWon(match, footballClub); else lostMatch">W</span>
+									<span class="form">
+										<span class="victory-state draw-match" *ngIf="isMatchDraw(match)">D</span>
+										<span class="victory-state win-match" *ngIf="isTeamWon(match, footballClub)">W</span>
+										<span class="victory-state lost-match" *ngIf="!isTeamWon(match, footballClub)">L</span>
+										<span class="match-det">
+											<!-- <span class="match-date"><span>{{match.date}}</span></span> -->
+											<span class="match-info">
+												<span class="this-team">{{getClubGoals(match, footballClub)}} </span><span class="goals-sep bold">:</span> {{getOpponentGoals(match, footballClub)}} <span class="opponent-team">{{getOpponentClubName(match, footballClub)}}</span>
+											</span>
+										</span>
+									</span>
 								</ng-container>
 							</div>
 						</td>
 					</tr>
 					<tr class="spacer"></tr>
 				</ng-container>
-				<ng-template #lostMatch>
-					<span class="lost-match">L</span>
-				</ng-template>
 			</tbody>
 		</table>
 	</div>

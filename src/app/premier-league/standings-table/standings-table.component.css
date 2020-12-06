@@ -97,11 +97,11 @@ div.form-container {
 	justify-content: center;
 	align-items: center;
 }
-div.form-container span {
+div.form-container span.victory-state {
 	font-size: 1.6rem;
 	font-weight: 600;
-	width: 2.3rem;
-	height: 2.3rem;
+	width: 2.4rem;
+	height: 2.4rem;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -111,6 +111,67 @@ div.form-container span {
 }
 div.form-container span:nth-last-child(1) {
 	margin-right: 0px;
+}
+span.form {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+span.form span.match-det > .match-date {
+	display: flex;
+	background: var(--secondary-purple);
+	margin-bottom: 4px;
+	color: var(--primary-purple);
+	font-weight: 400;
+	font-size: 1.4rem;
+	justify-content: center;
+	padding-left: 10px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+span.match-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span.form span.match-det {
+  visibility: hidden;
+  font-size: 1.8rem;
+  width: 150px;
+  text-align: center;
+  padding: 5px 0px;
+  /* padding-top: 0; */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  color: var(--dark-purple);
+  background-color: var(--highlight-purple);
+  border: 1px solid var(--primary-purple);
+  box-shadow: var(--light-box-shadow);
+  opacity: 0;
+  transition: opacity 0.4s;
+  font-weight: 500;
+}
+span.form span.match-det span.goals-sep {
+	color: var(--secondary-orange);
+	font-weight: 900;
+	font-size: 2rem;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+span.opponent-team {
+    margin: 0;
+	margin-left: 4px;
+	max-width: clamp(10ch, 30%, 22ch);
+	display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+span.this-team {
+	font-weight: 900;
 }
 span.lost-match {
 	color: var(--primary-white);
@@ -123,4 +184,8 @@ span.win-match {
 span.draw-match {
 	color: var(--primary-grey);
 	background: var(--light-grey);
+}
+span.form:hover .match-det {
+  visibility: visible;
+  opacity: 0.95;
 }

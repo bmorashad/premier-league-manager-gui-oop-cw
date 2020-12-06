@@ -58,18 +58,18 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 			match.teamB == footballClub.clubName
 	}
 	getMatchesByClub(footballClub: IFootballClub, limit ?: number): IMatch[] {
-		let matches = this.matches;
-		matches.sort((m1, m2) => Date.parse(m1.date) - Date.parse(m2.date))
+		let matches = [...this.matches];
+		matches.sort((m1, m2) => Date.parse(m2.date) - Date.parse(m1.date))
 		const matchesPlayed: IMatch[] = [];
 		let count: number = 1;
-		for (var i = 0, len = matches.length; i < len; i++) {
+		for (var i = 0; i < matches.length; i++) {
 			const match: IMatch = matches[i]
 			if(this.isClubInMatch(match, footballClub)) {
 				matchesPlayed.push(match)
 				count += 1
 			}
 			if(limit) {
-				if(count == limit) {
+				if(count > limit) {
 					break
 				}
 			}
@@ -90,6 +90,33 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 			return match.teamB
 		}
 		return "";
+	}
+	getClubGoals(match: IMatch, footballClub: IFootballClub) {
+		if(match.teamA == footballClub.clubName) {
+			return match.teamAGoals
+		}
+		if(match.teamB == footballClub.clubName) {
+			return match.teamBGoals
+		}
+		return -1
+	}
+	getOpponentGoals(match: IMatch, footballClub: IFootballClub): number {
+		if(match.teamA == footballClub.clubName) {
+			return match.teamBGoals
+		}
+		if(match.teamB == footballClub.clubName) {
+			return match.teamAGoals
+		}
+		return -1
+	}
+	getOpponentClubName(match: IMatch, footballClub: IFootballClub): string {
+		if(match.teamA == footballClub.clubName) {
+			return match.teamB
+		}
+		if(match.teamB == footballClub.clubName) {
+			return match.teamA
+		}
+		return ""
 	}
 	constructor() { }
 

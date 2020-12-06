@@ -18,17 +18,18 @@ section {
 	/* colors */
 	--primary-white: #ffffff;
 	--secondary-white: #fafafa;
-	--light-black: #333333;
 	--highlight-white: #f6f6f6;
 	--grey-white: #dbdbdb;
 	--dark-white: #cdcdcd;
 	--primary-black: #222222;
 	--secondary-black: #212121;
+	--light-black: #333333;
 	--primary-grey: #676767;
 	--dark-grey: #878787;
 	--light-grey: #9c9c9c;
 	--primary-purple: #5278ff;
 	--secondary-purple: #89a3ff;
+	--highlight-purple: #d9e1ff;
 	--dark-purple: #2957ff;
 	--primary-orange: #ff7a00;
 	--secondary-orange: #ff9900;
