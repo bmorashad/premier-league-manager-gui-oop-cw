@@ -38,7 +38,7 @@ export class MatchListComponent implements OnChanges, OnInit{
 				return Date.parse(match.date) == date.getTime()
 			});
 		}
-		return this.matches;
+		return [...this.matches];
 	}
 	ngOnChanges() : void {
 		let matchesByDate: IMatch[] = this.getMatchesByDate(this.matchDate);
