@@ -1,0 +1,95 @@
+.match-list-modal {
+	background: rgba(0, 0, 0, 0.8);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* justify-content: center; */
+	padding-top: 50px;
+	position: fixed;
+	z-index: 999999999999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 30px;
+	/* display: none; */
+}
+.match-list-modal .match-card-container {
+	padding-right: 40px; 
+	/* padding-top: 30px; */
+	overflow: scroll;
+}
+/* modal scrollbar */
+/* width */
+.match-card-container::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+.match-card-container::-webkit-scrollbar-track {
+	/* border-radius: 10px; */
+}
+
+/* Handle */
+.match-card-container::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.5);
+	/* border-radius: 10px; */
+}
+
+/* Handle on hover */
+.match-card-container::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.7);
+}
+.match-card-container::-webkit-scrollbar-corner {
+	background: transparent;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.match-card-container {
+	/* -ms-overflow-style: none;  [> IE and Edge <] */
+	/* scrollbar-width: none;  [> Firefox <] */
+}
+.match-card-container .match-card {
+	margin-bottom: 20px !important;
+}
+.match-list-modal-header {
+	display: flex;
+	position: relative;
+	left: -30px;
+	margin-bottom: 20px;
+}
+
+.match-list-modal-exit button{
+	position: relative;
+	font-size: 2rem;
+	border: 0;
+	font-weight: 600;
+	top: -4px;
+	left: -10px;
+	width: 3.5rem;
+	height: 3.5rem;
+	/* border-radius: 50%; */
+	/* margin-right: 25px; */
+	background: transparent;
+	color: var(--primary-white);
+	transition: 0.1s;
+}
+.match-list-modal-exit button:focus{
+	outline: 0;
+}
+.match-list-modal-exit button:hover{
+	transition: 0.1s;
+	background: rgb(255, 255, 255, 0.1)
+}
+.match-list-modal-exit button:active{
+	background: rgb(255, 255, 255, 0.2)
+}
+.match-list-modal-title {
+	font-size: 2.2rem;
+	color: var(--primary-white);
+
+}
+.no-match {
+	box-shadow: var(--light-box-shadow);
+	background: var(--primary-white);
+	padding: 20px 30px;
+}

@@ -2,6 +2,7 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { IFootballClub } from '../../dto/FootballClub';
 import { trigger, style, animate, transition, query, stagger } from '@angular/animations';
 import {IMatch} from 'src/app/dto/Match';
+import {MatchListModalService} from '../match-list-modal/match-list-modal.service';
 
 @Component({
 	selector: 'standings-table',
@@ -42,6 +43,10 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 		} else {
 			console.error("Give option doesn't exist:" + sortBy)
 		}
+	}
+	onTeamClick(footballClub: IFootballClub) {
+		let matchesPlayed = this.getMatchesByClub(footballClub);
+		this.matchListModalService.open(matchesPlayed, footballClub.clubName)
 	}
 	sortClubsByPoints(footballClubs: IFootballClub[]) : IFootballClub[] {
 		return footballClubs.sort((clubA, clubB) => clubB.points - clubA.points)
@@ -118,7 +123,7 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 		}
 		return ""
 	}
-	constructor() { }
+	constructor(private matchListModalService: MatchListModalService) { }
 
 
 }

@@ -1,0 +1,22 @@
+<div (click)="onClick($event)" id="modal-container" class="match-list-modal" [style.visibility]="!open ? 'hidden' : 'visible'">
+	<div class="match-list-modal-header">
+		<div class="match-list-modal-exit">
+			<button class="close">
+				🡠
+			</button>
+		</div>
+		<div class="match-list-modal-title">
+			Matches Played By {{clubName}}
+		</div>
+	</div>
+	<div class="match-card-container">
+		<ng-container *ngIf="matches.length > 0; else noMatches">
+			<match-card class="match-card" *ngFor="let match of matches" [match]="match"></match-card>
+		</ng-container>
+	</div>
+	<ng-template #noMatches>
+		<div class="no-matches">
+			{{noMatchesMessage}}
+		</div>
+	</ng-template>
+</div>

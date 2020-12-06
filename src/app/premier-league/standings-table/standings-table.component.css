@@ -80,6 +80,18 @@ table.flat-table thead tr {
 table.flat-table tbody tr {
 	background: var(--primary-white);
 }
+
+table.flat-table tbody tr td {
+	transition: 0.4s;
+}
+table.flat-table tbody tr td:nth-child(10):hover {
+	background: rgba(119, 137, 255, 0.22);
+	cursor: pointer;
+}
+table.flat-table tbody tr td:nth-child(10):active {
+	background: rgba(119, 137, 255, 0.28);
+	cursor: pointer;
+}
 tr.no-content {
 	background: var(--primary-white);
 	border-bottom: 2px solid var(--grey-white);

@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PremierLeagueModule } from './premier-league/premier-league.module'
-import { CommonUiModule } from './common-ui/common-ui.module'
+import { CommonUiModule } from './common-ui/common-ui.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CommonUiModule } from './common-ui/common-ui.module'
     AppRoutingModule,
 	PremierLeagueModule,
 	CommonUiModule,
-	HttpClientModule
+	HttpClientModule,
+	FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

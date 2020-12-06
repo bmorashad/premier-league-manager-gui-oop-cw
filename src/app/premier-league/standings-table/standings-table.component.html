@@ -1,3 +1,5 @@
+<match-list-modal>
+</match-list-modal>
 <section class="-margin-top-medium -margin-bottom-small">
 	<div class="flat-table-wrapper">
 		<table [attr.id]="_id" class="flat-table">
@@ -27,7 +29,7 @@
 						<td><span class="text5">{{footballClub.goalsAgainst}}</span></td>
 						<td><span class="text5">{{footballClub.goalsDifference}}</span></td>
 						<td><span class="text5">{{footballClub.points}}</span></td>
-						<td>
+						<td (click)="onTeamClick(footballClub)">
 							<div class="form-container">
 								<ng-container *ngFor="let match of getMatchesByClub(footballClub, 3)">
 									<span class="form">
