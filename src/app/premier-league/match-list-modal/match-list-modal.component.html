@@ -9,16 +9,14 @@
 			Matches Played By {{clubName}}
 		</div>
 	</div>
-	<div  [@popOverState]="showState" [@popOutState]="showState" class="match-card-container">
-		<!-- <ng-container *ngIf="matches.length > 0; else noMatches"> -->
-			<!-- <div [@stagger]="matches"> -->
+	<div  [@popOut]="showState" [@popOver]="showState" class="match-card-container">
+		<ng-container *ngIf="matches.length > 0; else noMatches">
 			<match-card class="match-card" *ngFor="let match of matches" [match]="match"></match-card>
-			<!-- </div> -->
-		<!-- </ng-container> -->
+		</ng-container>
 	</div>
-	<!-- <ng-template #noMatches> -->
-		<!-- <div class="no-matches"> -->
-			<!-- {{noMatchesMessage}} -->
-		<!-- </div> -->
-	<!-- </ng-template> -->
+	<ng-template #noMatches>
+		<div class="no-matches">
+			{{noMatchesMessage}}
+		</div>
+	</ng-template>
 </div>
