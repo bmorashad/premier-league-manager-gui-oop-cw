@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PremierLeagueModule } from './premier-league/premier-league.module'
 import { CommonUiModule } from './common-ui/common-ui.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -19,10 +18,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     AppRoutingModule,
 	PremierLeagueModule,
 	CommonUiModule,
-	HttpClientModule,
-	FontAwesomeModule
+	HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
