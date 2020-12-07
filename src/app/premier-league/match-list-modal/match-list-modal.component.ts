@@ -3,22 +3,63 @@ import {IMatch} from 'src/app/dto/Match';
 import {Observable} from 'rxjs';
 import {MatchListModalService} from './match-list-modal.service';
 import {values} from './types';
+import { trigger, style, animate, transition, query, stagger, state, group, animateChild } from '@angular/animations';
 
 @Component({
 	selector: 'match-list-modal',
 	templateUrl: './match-list-modal.component.html',
 	styleUrls: ['./match-list-modal.component.css'],
+	animations: [
+		 trigger('fadeIn', [
+            state('show', style({
+              visibility: 'visible',
+              opacity: '1',
+            })),
+          state('hide', style({
+              visibility: 'hidden',
+              opacity: '0',
+              transition: 'visibility 0s, opacity 0.5s linear'
+          })),
+          transition('hide <=> show', [
+              group([
+                  query('@popOverState', [
+                      animateChild()
+                  ]),
+                  animate('150ms ease-in')
+              ])
+            ]),
+        ]),
+        trigger('popOverState', [
+            state('show', style({
+                transform: 'translateY(0)',
+                opacity: '1',
+            })),
+            state('hide', style({
+                transform: 'translateY(-100%)',
+                opacity: '0'
+            })),
+            transition('hide => show', animate('100ms 100ms ease-in') ),
+            transition('show => hide', animate('150ms ease-out'))
+        ])
+		// trigger('stagger', [
+			// transition('* <=> *', [
+				// query(':enter', [
+					// style({transform: 'translateY(80px)', opacity: '0'}),
+					// stagger(800, [animate('8s', style({transform: 'translateY(0)', opacity: '1'}))])
+				// ], {optional: true})
+			// ])
+		// ])
+	]
 })
 export class MatchListModalComponent implements OnInit{
-	open: boolean = false
+	show: boolean = false
 	state: Observable<values>
 	matches: IMatch[] = [];
 	clubName: string = "";
 	noMatchesMessage: string = "No Matches";
 	constructor(private modalService: MatchListModalService) {}
-
-	get openState() {
-		return open ? 'show' : 'hide'
+	get showState() {
+		return this.show ? 'show' : 'hide'
 	}
 	onClick(e: any) {
 		const isContainer = e.target.classList.contains('match-list-modal')
@@ -39,11 +80,11 @@ export class MatchListModalComponent implements OnInit{
 				let matches = state[1]
 				this.clubName = state[2]
 				this.matches = matches 
-				this.open = true
+				this.show = true
 				return
 			}
 			if(state[0] == "close") {
-				this.open = false
+				this.show = false
 				return
 			}
 		})
