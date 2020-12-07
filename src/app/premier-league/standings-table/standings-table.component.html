@@ -35,7 +35,7 @@
 									<span class="form">
 										<span class="victory-state draw-match" *ngIf="isMatchDraw(match)">D</span>
 										<span class="victory-state win-match" *ngIf="isTeamWon(match, footballClub)">W</span>
-										<span class="victory-state lost-match" *ngIf="!isTeamWon(match, footballClub)">L</span>
+										<span class="victory-state lost-match" *ngIf="!isMatchDraw(match) && !isTeamWon(match, footballClub)">L</span>
 										<span class="match-det">
 											<!-- <span class="match-date"><span>{{match.date}}</span></span> -->
 											<span class="match-info">
