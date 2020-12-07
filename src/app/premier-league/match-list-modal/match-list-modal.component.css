@@ -88,8 +88,14 @@
 	color: var(--primary-white);
 
 }
-.no-match {
+.no-matches {
 	box-shadow: var(--light-box-shadow);
 	background: var(--primary-white);
-	padding: 20px 30px;
+	padding: 80px 100px;
+	/* white-space: nowrap; */
+	/* width: 80%; */
+	font-size: 2.4rem;
+	border: 4px solid var(--secondary-black);
+	margin-top: 40px;
+	color: var(--dark-grey);
 }
