@@ -70,7 +70,8 @@
 	/* border-radius: 50%; */
 	/* margin-right: 25px; */
 	background: transparent;
-	color: var(--primary-white);
+	/* color: var(--primary-white); */
+	color: white;
 	transition: 0.1s;
 }
 .match-list-modal-exit button:focus{
@@ -85,8 +86,8 @@
 }
 .match-list-modal-title {
 	font-size: 2.2rem;
-	color: var(--primary-white);
-
+	/* color: var(--primary-white); */
+	color: white;
 }
 .no-matches {
 	box-shadow: var(--light-box-shadow);

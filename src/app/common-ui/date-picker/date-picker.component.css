@@ -1,9 +1,20 @@
+.dark[data-theme="dark"] {
+	/* --secondary-purple: var(--primary-purple); */
+	--primary-white: #1c1c1c;
+	--light-grey: var(--dark-grey)
+}
+input[type="date"].date-picker {
+	color: var(--light-grey);
+}
 .date-picker-wrapper {
 	display: flex;
 	align-items: center;
 }
 label.date-picker {
 	margin-right: 6px;
+}
+input.date-picker {
+	background: var(--primary-white)
 }
 button.clear {
 	display: flex;
@@ -19,7 +30,7 @@ button.clear {
 	cursor: pointer;
 }
 button.clear:hover {
-	background: var(--primary-purple);
+	background: var(--dark-purple);
 }
 button.clear:focus {
 	outline: 0

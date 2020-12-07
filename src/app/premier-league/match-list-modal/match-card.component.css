@@ -1,9 +1,13 @@
+.dark[data-theme="dark"] {
+	/* --secondary-black: #e5e5e5; */
+	/* --primary-black: #444; */
+}
 /* match card */
 .match-card {
   box-shadow: var(--light-box-shadow);
   /* border: var(--primary-border); */
   /* border-radius: 10px; */
-  border: 4px solid var(--secondary-black);
+  border: 4px solid var(--primary-black);
   background: var(--primary-white);
   width: clamp(300px, 50vw, 500px);
   margin-bottom: 20px;
@@ -23,7 +27,7 @@ p.match-info {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--secondary-black)
+  color: var(--primary-black)
 }
 
 div.match-date {

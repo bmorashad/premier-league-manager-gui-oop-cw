@@ -13,7 +13,8 @@
   margin-left: 20px;
 }
 .navbar-title > p {
-  color: var(--primary-white);
+  /* color: var(--primary-white); */
+  color: white;
   font-weight: 500;
 }
 .navbar-left {

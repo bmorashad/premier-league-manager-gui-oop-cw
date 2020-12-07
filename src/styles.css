@@ -54,6 +54,35 @@ section {
 	/* utils */
 	--margin-tb-medium: 40px;
 }
+:root[data-theme="dark"]{
+	/* colors */
+	--primary-white: #242424;
+	--secondary-white: #1c1c1c;
+	--highlight-white: #171717;
+	--grey-white: #333;
+	--dark-white: #444444;
+	--primary-black: #e5e5e5;
+	--secondary-black: var(--grey-white);
+	--light-black: #555;
+	--primary-grey: #676767;
+	--dark-grey: #878787;
+	--light-grey: #9c9c9c;
+	--primary-purple: #3562FF;
+	--secondary-purple: #597eff;
+	--highlight-purple: #d9e1ff;
+	--dark-purple: #2957ff;
+	--primary-orange: #ff7a00;
+	--secondary-orange: #ff9900;
+	--light-orange: #ffb444;
+	--primary-yellow: #fff27a;
+	--primary-green: #0c9d35;
+	--secondary-green: #0cc481;
+	--highlight-green: #e8fff7;
+	--primary-red: #ff5151;
+	--secondary-red: #ff7676;
+	--dark-red: #ff1f1f;
+	--highlight-red: #ffeaea;
+}
 /* util */
 .-flex {
 	display: flex;
@@ -235,7 +264,7 @@ hr.light {
 	padding-left: 5px;
 	border: 1px solid var(--dark-white);
 	background: var(--primary-white);
-	color: var(--secondary-black);
+	color: var(--primary-black);
 }
 .select:hover {
 	outline: 0;
@@ -257,7 +286,7 @@ button.btn {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	color: var(--primary-white);
+	color: white;
 	font-weight: 900;
 	font-size: 1.4rem;
 	box-shadow: var(--dark-box-shadow);

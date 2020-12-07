@@ -1,3 +1,9 @@
+.dark[data-theme="dark"] {
+	--secondary-black: #C5D1FF;
+}
+.title {
+	color: var(--secondary-black);
+}
 .title-line {
   position: relative;
   margin-top: 8px;

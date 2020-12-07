@@ -1,3 +1,9 @@
+/* .dark[data-theme="dark"] { */
+	/* --primary-border: 2px solid #505050; */
+	/* --highlight-white: #414141; */
+	/* --primary-grey: #c9c9c9; */
+	/* --primary-white: #242424; */
+/* } */
 div.match-card {
   box-shadow: var(--light-box-shadow);
   border: var(--primary-border);
