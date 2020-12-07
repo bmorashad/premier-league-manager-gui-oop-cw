@@ -7,27 +7,25 @@ div.generated-match-detail {
   /* padding-bottom: 30px; */
 }
 p.match-info {
-  /* display: flex; */
-  align-items: center;
-  /* justify-content: center; */
-  width: fit-content;
+	align-items: center;
+    display: flex;
+    width: -moz-fit-content;
+    max-width: clamp(80ch, 80%, 100ch);
 }
 span.team-name {
-	/* max-width: clamp(12ch, 30%, 22ch); */
-	position: relative;
-	top: 8px;
-	max-width: 12ch;
-	display: inline-block;
-	white-space: nowrap;
-	overflow: hidden;
-	margin: 0;
-	text-overflow: ellipsis
+	margin-right: 5px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    text-overflow: ellipsis;
 }
 span.generated-goals {
   font-weight: 600;
   margin-left: 10px;
   margin-right: 10px;
   font-size: 2.4rem;
+  white-space: nowrap
 }
 span.goals-sep {
   color: var(--primary-orange);
