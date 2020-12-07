@@ -19,7 +19,7 @@
 			<tbody [@stagger]="footballClubs">
 				<ng-container *ngFor="let footballClub of footballClubs">
 					<tr class="spacer"></tr>
-					<tr>
+					<tr (click)="onTeamClick(footballClub)">
 						<td><span class="text5">{{footballClub.clubName}}</span></td>
 						<td><span class="text5">{{footballClub.matchCount}}</span></td>
 						<td><span class="text5">{{footballClub.winCount}}</span></td>
@@ -29,7 +29,7 @@
 						<td><span class="text5">{{footballClub.goalsAgainst}}</span></td>
 						<td><span class="text5">{{footballClub.goalsDifference}}</span></td>
 						<td><span class="text5">{{footballClub.points}}</span></td>
-						<td (click)="onTeamClick(footballClub)">
+						<td>
 							<div class="form-container">
 								<ng-container *ngFor="let match of getMatchesByClub(footballClub, 3)">
 									<span class="form">

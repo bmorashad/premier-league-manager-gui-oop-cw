@@ -16,6 +16,7 @@ table.flat-table {
 	border-collapse: collapse;
 	border: 2px solid var(--grey-white);
 	box-shadow: var(--light-box-shadow);
+	background: var(--primary-white);
 }
 
 table.flat-table tr.spacer {
@@ -78,20 +79,24 @@ table.flat-table thead tr {
 
 	background: var(--highlight-white);
 }
-
-table.flat-table tbody tr {
-	background: var(--primary-white);
-}
-
 table.flat-table tbody tr td {
 	transition: 0.4s;
 }
-table.flat-table tbody tr td:nth-child(10):hover {
-	background: rgba(119, 137, 255, 0.22);
+table.flat-table tbody tr {
+	background: var(--primary-white);
+	transition: 0.2s;
+}
+table.flat-table tbody tr:hover {
+	/* background: rgba(119, 137, 255, 1); */
+	border-left: 2px solid var(--primary-purple) !important;
+	border-right: 1px solid var(--grey-white) !important;
+	transform: scale(0.98);
 	cursor: pointer;
 }
-table.flat-table tbody tr td:nth-child(10):active {
-	background: rgba(119, 137, 255, 0.28);
+table.flat-table tbody tr:active {
+	/* background: rgba(119, 137, 255, 0.28); */
+	/* width: 120%; */
+	transform: scale(0.97);
 	cursor: pointer;
 }
 tr.no-content {
