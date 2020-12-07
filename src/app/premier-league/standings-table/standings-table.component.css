@@ -88,15 +88,16 @@ table.flat-table tbody tr {
 }
 table.flat-table tbody tr:hover {
 	/* background: rgba(119, 137, 255, 1); */
-	border-left: 2px solid var(--primary-purple) !important;
-	border-right: 1px solid var(--grey-white) !important;
-	transform: scale(0.98);
+	transform: scale(0.99);
 	cursor: pointer;
+}
+table.flat-table:active {
+	/* background: rgba(119, 137, 255, 0.28); */
 }
 table.flat-table tbody tr:active {
 	/* background: rgba(119, 137, 255, 0.28); */
 	/* width: 120%; */
-	transform: scale(0.97);
+	transform: scale(0.98);
 	cursor: pointer;
 }
 tr.no-content {
