@@ -46,6 +46,8 @@ table.flat-table td {
 }
 table.flat-table td, th {
 	border: 1px solid var(--grey-white);
+	border-right: 0px solid var(--grey-white);
+	border-left: 0px solid var(--grey-white);
 }
 table.flat-table th {
 	border-bottom: 0px solid var(--grey-white);
