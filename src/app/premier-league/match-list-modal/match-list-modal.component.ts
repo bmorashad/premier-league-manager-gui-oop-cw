@@ -40,21 +40,6 @@ import { trigger, style, animate, transition, query, stagger, state, group, anim
 			})),
 			transition('hide => show', animate('150ms ease-in') ),
 		]),
-		trigger('stagger2', [
-			state('show', style({
-				transform: 'translateY(0)',
-				opacity: '1',
-			})),
-			state('hide', style({
-				transform: 'translateY(-30%)',
-				opacity: '0'
-			})),
-			transition('hide <=> show', [
-				query(":enter", [
-					stagger(100, [animate('200ms ease-in')])
-				])
-			] ),
-		]),
 		trigger('popOut', [
 			state('show', style({
 				transform: 'translateY(0)',
