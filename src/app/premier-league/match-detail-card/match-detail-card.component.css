@@ -13,10 +13,11 @@ p.match-info {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: clamp(26ch, 80%, 80ch);
   /* width: fit-content; */
 }
 span.team-name {
-	max-width: clamp(10ch, 30%, 22ch);
+	/* max-width: 16ch; */
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
