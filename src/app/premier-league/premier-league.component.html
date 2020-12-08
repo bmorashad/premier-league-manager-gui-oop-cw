@@ -15,19 +15,22 @@
 		</div>
 	</modal-error>
 </div>
+<div class="dark-mode-switch-wrapper">
+	<dark-mode-switch (mode)="onModeChange($event)"></dark-mode-switch>
+</div>
 <title1>
 <span>{{title}}</span>
 </title1>
 <section class="-margin-top-large -margin-bottom-small">
 	<div class="refresh-button-wrapper">
 		<div class="refresh-button">
-			<icon-button icon="../../../assets/icons/refresh.png" (click)="onRefresh()"></icon-button>
+			<icon-button [icon]="syncIcon" (click)="onRefresh()"></icon-button>
 		</div>
 	</div>
 	<tabs>
 	<tab title="Standings">
 	<div class="center content-spinner" *ngIf="isDataLoading">
-		<img src="../../assets/gifs/football-loading.gif" alt="loading">
+		<img [ngClass]="{loadingGifDark: mode == 'dark'}" [src]="loadingGif" alt="loading">
 	</div>
 	<div class="wrapper"  *ngIf="!isDataLoading">
 		<label class="small light" for="sort">Sort by: </label>
@@ -52,7 +55,7 @@
 		</div>
 	</div>
 	<div class="center content-spinner" *ngIf="isDataLoading">
-		<img src="../../assets/gifs/football-loading.gif">
+		<img [ngClass]="{loadingGifDark: mode == 'dark'}" [src]="loadingGif">
 	</div>
 	<match-list [matches]="matches" [matchDate]="matchDate" *ngIf="!isDataLoading"></match-list>
 	</tab>

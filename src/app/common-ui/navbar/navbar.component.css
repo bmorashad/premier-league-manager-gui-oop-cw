@@ -17,6 +17,10 @@
   color: white;
   font-weight: 500;
 }
+.navbar-center {
+	margin-right: auto;
+	margin-left: auto;
+}
 .navbar-left {
   margin-left: auto;
   display: flex;

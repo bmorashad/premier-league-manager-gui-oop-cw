@@ -1,0 +1,29 @@
+div.icon-button > button {
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.5rem;
+	height: 3.5rem;
+	border: 0px solid var(--primary-black);
+	transition: 0.2s;
+	cursor: pointer;
+}
+div.icon-button > button:hover {
+	outline: 0;
+	background: var(--primary-purple);
+}
+div.icon-button > button:active {
+	outline: 0;
+	background: var(--primary-white);
+	border: 2px solid var(--primary-white);
+}
+div.icon-button > button:focus {
+	outline: 0px solid rgba(0, 0, 0, 0.2);
+	/* outline-offset: 0; */
+	/* background: rgba(0, 0, 0, 0.3) */
+}
+div.icon-button button > img {
+	width: 2rem;
+	height: 2rem;
+}

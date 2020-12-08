@@ -18,7 +18,7 @@ div.active {
 div.tab:active {
 	cursor: pointer;
 	color: var(--primary-black);
-	background: rgba(75, 75, 75, 0.1);
+	background: var(--one-grey-highlight);
 	transition: 0.1s;
 	border-bottom: 4px solid rgba(41, 87, 255, 0.4);	
 }

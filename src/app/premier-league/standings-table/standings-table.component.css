@@ -194,11 +194,13 @@ span.this-team {
 	font-weight: 900;
 }
 span.lost-match {
-	color: var(--primary-white);
+	/* color: var(--primary-white); */
+	color: white;
 	background: var(--primary-red);
 }
 span.win-match {
-	color: var(--primary-white);
+	/* color: var(--primary-white); */
+	color: white;
 	background: var(--primary-green);
 }
 span.draw-match {

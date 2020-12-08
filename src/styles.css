@@ -42,6 +42,12 @@ section {
 	--secondary-red: #ff7676;
 	--dark-red: #ff1f1f;
 	--highlight-red: #ffeaea;
+
+	/* transparent colors */
+	--one-grey-highlight: rgba(75, 75, 75, 0.1);
+	--one-dark-highlight: rgba(0, 0, 0, 0.1);
+	--two-dark-highlight: rgba(0, 0, 0, 0.2);
+	/* --light-dark-highlight-hover: rgba(0, 0, 0, 0.3); */
 	/* borders */
 	--primary-border-width: 2px;
 	--secondary-border-width: 1px;
@@ -82,6 +88,10 @@ section {
 	--secondary-red: #ff7676;
 	--dark-red: #ff1f1f;
 	--highlight-red: #ffeaea;
+	/* transparent colors */
+	--one-grey-highlight: rgba(175, 175, 175, 0.1);
+	--one-dark-highlight: rgba(200, 200, 200, 0.1);
+	--two-dark-highlight: rgba(200, 200, 200, 0.2);
 }
 /* util */
 .-flex {
@@ -369,10 +379,10 @@ button.btn > .spinner {
 }
 /* error message */
 div.error-message-card {
-	border-left: 2px solid var(--primary-red);
-	background: var(--highlight-red);
+	border-left: 2px solid var(--secondary-red);
+	background: var(--secondary-white);
 	padding: 20px 15px;
-	color: var(--primary-grey);
+	color: var(--light-grey);
 }
 /* spinner */
 .spinner {

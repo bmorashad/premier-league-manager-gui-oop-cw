@@ -1,3 +1,15 @@
+.loadingGifDark {
+	/* filter: invert() */
+}
+.dark-mode-switch-wrapper {
+	position: absolute;
+	top: 1%;
+	left: 88%;
+	z-index: 9999999999
+}
+.lightSyncIcon {
+	filter: invert();
+}
 div.wrapper {
 	width: 80%;
 	min-width: 700px;

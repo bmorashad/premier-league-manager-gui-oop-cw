@@ -33,7 +33,8 @@ import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.com
 	  TabComponent,
 	  TabsComponent,
 	  PrimaryButtonComponent,
-	  IconButtonComponent
+	  IconButtonComponent,
+	  DarkModeSwitchComponent
   ]
 })
 export class CommonUiModule { }
