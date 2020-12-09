@@ -2,7 +2,12 @@
 <div class="logo">
 	<img src="../../../assets/logo.png">
 </div>
-<span class="left text4 bold"><span class="season-begin bold">/</span>{{season}}</span>
+<span class="left bold">
+	<div class="dark-mode-switch-wrapper">
+		<dark-mode-switch></dark-mode-switch>
+	</div>
+	<span class="season-begin bold">/</span>
+	{{season}}</span>
 </navbar>
 <div class="content">
 	<router-outlet></router-outlet>

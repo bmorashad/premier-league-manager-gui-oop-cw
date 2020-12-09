@@ -17,7 +17,7 @@ button.icon-button:hover {
 }
 button.icon-button:active {
 	outline: 0;
-	background: var(--two-dark-highlight);
+	background-color: var(--two-dark-highlight);
 }
 button.icon-button:focus {
 	outline: 2px solid var(--two-dark-highlight);

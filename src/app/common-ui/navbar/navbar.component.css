@@ -15,6 +15,7 @@
 .navbar-title > p {
   /* color: var(--primary-white); */
   color: white;
+  font-size: 22px;
   font-weight: 500;
 }
 .navbar-center {

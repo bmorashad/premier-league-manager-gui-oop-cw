@@ -1,11 +1,9 @@
-.loadingGifDark {
-	/* filter: invert() */
-}
-.dark-mode-switch-wrapper {
-	position: absolute;
-	top: 1%;
-	left: 88%;
-	z-index: 9999999999
+div.matches-tab .dark[data-theme="dark"] {
+	--primary-border: 2px solid #3d3d3d;
+	--dark-white: #3d3d3d;
+	--highlight-white: #3d3d3d;
+	--primary-grey: #adadad;
+	--primary-white: #242424;
 }
 .lightSyncIcon {
 	filter: invert();

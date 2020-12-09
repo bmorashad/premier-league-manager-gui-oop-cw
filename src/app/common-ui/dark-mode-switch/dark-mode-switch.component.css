@@ -3,8 +3,8 @@ div.icon-button > button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 3.5rem;
-	height: 3.5rem;
+	width: 35px;
+	height: 35px;
 	border: 0px solid var(--primary-black);
 	transition: 0.2s;
 	cursor: pointer;
@@ -24,6 +24,6 @@ div.icon-button > button:focus {
 	/* background: rgba(0, 0, 0, 0.3) */
 }
 div.icon-button button > img {
-	width: 2rem;
-	height: 2rem;
+	width: 20px;
+	height: 20px;
 }

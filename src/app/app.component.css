@@ -1,9 +1,16 @@
+.dark-mode-switch-wrapper {
+	margin-right: 5px;
+}
 span.left {
   /* color: var(--primary-white); */
   color: white;
   margin-right: 10px;
   font-weight: 500;
+  font-size: 20px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 span.season-begin {
 	color: var(--primary-orange)

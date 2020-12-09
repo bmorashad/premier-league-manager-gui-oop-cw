@@ -15,9 +15,6 @@
 		</div>
 	</modal-error>
 </div>
-<div class="dark-mode-switch-wrapper">
-	<dark-mode-switch></dark-mode-switch>
-</div>
 <title1>
 <span>{{title}}</span>
 </title1>
@@ -45,19 +42,23 @@
 	</div>
 	</tab>
 	<tab title="Matches">
-	<div class="-flex">
-		<date-picker (pick)="onDatePick($event)"></date-picker>
-		<div class="-flex-right">
-			<button class="btn primary-btn" (click)="onAddMatch()" [disabled]="isRandomMatchLoading || isDataLoading">
-				<span [ngClass]="{'-hide': isRandomMatchLoading}">ADD MATCH</span>
-				<div [ngClass]="{'-hide': !isRandomMatchLoading, spinner: true, 'spinner-small': true}"></div>
-			</button>
+	<div class="matches-tab">
+		<div class="-flex">
+			<date-picker (pick)="onDatePick($event)"></date-picker>
+			<div class="-flex-right">
+				<button class="btn primary-btn" (click)="onAddMatch()" [disabled]="isRandomMatchLoading || isDataLoading">
+					<span [ngClass]="{'-hide': isRandomMatchLoading}">ADD MATCH</span>
+					<div [ngClass]="{'-hide': !isRandomMatchLoading, spinner: true, 'spinner-small': true}"></div>
+				</button>
+			</div>
+		</div>
+		<div class="center content-spinner" *ngIf="isDataLoading">
+			<img [src]="loadingGif">
+		</div>
+		<div class="dark match-list">
+			<match-list [matches]="matches" [matchDate]="matchDate" *ngIf="!isDataLoading"></match-list>
 		</div>
 	</div>
-	<div class="center content-spinner" *ngIf="isDataLoading">
-		<img [src]="loadingGif">
-	</div>
-	<match-list [matches]="matches" [matchDate]="matchDate" *ngIf="!isDataLoading"></match-list>
 	</tab>
 	</tabs>
 </section>
