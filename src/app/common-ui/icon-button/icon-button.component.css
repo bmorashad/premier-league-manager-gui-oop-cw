@@ -1,5 +1,9 @@
-div.icon-button > button {
-	background: transparent;
+.icon-button {
+	background-color: transparent;
+	background-image: var(--sync-icon);
+	background-size: 2rem 2.2rem;
+	background-repeat: no-repeat;
+	background-position: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -7,20 +11,20 @@ div.icon-button > button {
 	height: 50px;
 	border: 0px;
 }
-div.icon-button > button:hover {
+button.icon-button:hover {
 	outline: 0;
-	background: var(--one-dark-highlight) 
+	background-color: var(--one-dark-highlight);
 }
-div.icon-button > button:active {
+button.icon-button:active {
 	outline: 0;
 	background: var(--two-dark-highlight);
 }
-div.icon-button > button:focus {
+button.icon-button:focus {
 	outline: 2px solid var(--two-dark-highlight);
 	outline-offset: 0;
 	/* background: rgba(0, 0, 0, 0.3) */
 }
-div.icon-button button > img {
+button.icon-button > img {
 	width: 20px;
 	height: 22px;
 }

@@ -15,6 +15,7 @@ section {
 	margin-top: 20px;
 }
 :root {
+	--sync-icon : url("assets/icons/refreshDark.png");
 	/* colors */
 	--primary-white: #ffffff;
 	--secondary-white: #fafafa;
@@ -61,6 +62,7 @@ section {
 	--margin-tb-medium: 40px;
 }
 :root[data-theme="dark"]{
+	--sync-icon : url("assets/icons/refreshLight.png");
 	/* colors */
 	--primary-white: #242424;
 	--secondary-white: #1c1c1c;

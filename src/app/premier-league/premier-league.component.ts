@@ -12,10 +12,6 @@ import {forkJoin} from 'rxjs';
 	styleUrls: ['./premier-league.component.css']
 })
 export class PremierLeagueComponent implements OnInit {
-	mode: string = "light"
-	lightSync: string = "../../../assets/icons/refreshLight.png"
-	darkSync: string = "../../../assets/icons/refreshDark.png"
-	syncIcon: string = this.darkSync;
 	loadingGif: string = "../../assets/gifs/football-loading.gif"
 	successNotify: boolean = false;
 	successNotifyMessage: string = "";
@@ -35,16 +31,6 @@ export class PremierLeagueComponent implements OnInit {
 	generatedMatch: IMatch = null;
 	matchDate: Date = null;
 	footballClubsSortBy: string = "POINTS"; 
-
-	onModeChange(mode: string) {
-		if(mode == 'dark') {
-			this.mode = 'dark';
-			this.syncIcon = this.lightSync
-		} else {
-			this.mode = 'light';
-			this.syncIcon = this.darkSync
-		}
-	}
 
 	onSortByChange(event: any) {
 		this.footballClubsSortBy = event.target.value.toUpperCase();
