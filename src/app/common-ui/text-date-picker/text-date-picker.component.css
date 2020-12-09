@@ -1,0 +1,78 @@
+.dark[data-theme="dark"] {
+	/* --secondary-purple: var(--primary-purple); */
+	--primary-white: #222;
+	--secondary-black: var(--dark-grey);
+	--light-grey: var(--dark-grey);
+}
+input[type="text"].date-picker {
+	color: var(--light-grey);
+}
+.date-picker-wrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+input[type="text"].date-picker {
+	height: 35px;
+	box-shadow: var(--dark-box-shadow);
+	padding-right: 5px;
+	padding-left: 10px;
+	margin-right: 5px;
+	margin-left: 5px;
+	color: var(--secondary-black);
+	opacity: 1;
+	border-bottom: var(--primary-border-width) solid var(--secondary-purple);
+	border-top: var(--primary-border-width) solid var(--secondary-purple);
+	border-right: var(--primary-border-width) solid var(--secondary-purple);
+	border-left: var(--primary-border-width) solid var(--secondary-purple);
+	background: var(--primary-white);
+}
+input[type="text"].date-picker:focus {
+	outline: 0px;
+	border: 2px solid var(--primary-purple);
+}
+button.search-btn:disabled {
+	background: var(--secondary-purple)
+}
+button.search-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--secondary-purple);
+	height: 35px;
+	width: 35px;
+	border: var(--primary-border-width) solid var(--secondary-purple);
+	color: white;
+	box-shadow: var(--dark-box-shadow);
+	font-weight: 900;
+	transition: 0.2s;
+	cursor: pointer;
+}
+button.search-btn > img {
+	width: 20px;
+	height: 20px;
+}
+button.search-btn:hover:enabled {
+	background: var(--primary-purple);
+	border-color: var(--primary-purple);
+}
+button.search-btn:focus:enabled {
+	outline: 2px solid var(--secondary-purple);
+	outline-offset: -4px;
+	background: var(--dark-purple);
+	border-color: var(--dark-purple);
+}
+input.date-format-error {
+	border: 2px solid var(--primary-red) !important;
+}
+div.date-format-error-message {
+	/* border: 1px solid var(--primary-red); */
+	/* background: var(--highlight-red); */
+	color: var(--secondary-orange);
+	position: absolute;
+	/* white-space: nowrap; */
+	font-size: 1.3rem;
+	font-weight: 500;
+	top: 40px; 
+	left: 102px; 
+}

@@ -1,0 +1,12 @@
+<div class="dark date-picker-wrapper">
+	<label class="small light" for="match-date-picker">Search by date: </label>
+	<input class="date-picker" [ngClass]="{'date-format-error': dateFormatError, shake: dateFormatError}" placeholder="YYYY-MM-DD" type="text" id="match-date-picker" 
+	(focusin)="onFocusIn()" (keyup)="onKeyDown($event)" (focusout)="onFocusOut($event.target.value)" 
+	(input)="onChange($event.target.value)">
+	<button class="search-btn" (click)="onSearch()"  [disabled]="disableSearch">
+		<img [src]="icon" alt="icon">
+	</button>
+	<div class="date-format-error-message" [hidden]="!dateFormatError">
+		{{errorMessage}}
+	</div>
+</div>

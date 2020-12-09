@@ -44,7 +44,8 @@
 	<tab title="Matches">
 	<div class="matches-tab">
 		<div class="-flex">
-			<date-picker (pick)="onDatePick($event)"></date-picker>
+			<!-- <date-picker (pick)="onDatePick($event)"></date-picker> -->
+			<text-date-picker (date)="onDatePick($event)"></text-date-picker>
 			<div class="-flex-right">
 				<button class="btn primary-btn" (click)="onAddMatch()" [disabled]="isRandomMatchLoading || isDataLoading">
 					<span [ngClass]="{'-hide': isRandomMatchLoading}">ADD MATCH</span>
