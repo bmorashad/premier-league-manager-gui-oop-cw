@@ -1,3 +1,11 @@
+.dark[data-theme="dark"] {
+	--primary-green: #e8fff7;
+	--highlight-green: #0c9d35;
+	/* --primary-red: #ff5151; */
+	--secondary-red: #ff7676;
+	--highlight-red: #ff5151;
+	--secondary-red: #ffeaea;
+}
 .snackbar {
   width: calc(100% + 1px);
   position: fixed;
