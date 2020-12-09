@@ -47,7 +47,7 @@
 			<!-- <date-picker (pick)="onDatePick($event)"></date-picker> -->
 			<text-date-picker (date)="onDatePick($event)"></text-date-picker>
 			<div class="-flex-right">
-				<button class="btn primary-btn" (click)="onAddMatch()" [disabled]="isRandomMatchLoading || isDataLoading">
+				<button class="btn primary-btn" [ngClass]="{shake: randomMatchError}" (animationend)="disableRandomMatchError()" (click)="onAddMatch()" [disabled]="isRandomMatchLoading || isDataLoading">
 					<span [ngClass]="{'-hide': isRandomMatchLoading}">ADD MATCH</span>
 					<div [ngClass]="{'-hide': !isRandomMatchLoading, spinner: true, 'spinner-small': true}"></div>
 				</button>

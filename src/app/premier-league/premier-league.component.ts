@@ -17,6 +17,7 @@ export class PremierLeagueComponent implements OnInit {
 	successNotifyMessage: string = "";
 	errorNotify: boolean = false;
 	errorNotifyMessage: string = "";
+	randomMatchError: boolean = false;
 
 	match = new EventEmitter<IMatch>()
 	title: string = "Premier League Stats & Matches"
@@ -125,11 +126,14 @@ export class PremierLeagueComponent implements OnInit {
 			}
 			this.isRandomMatchLoading = false;
 		}, () => {
+			this.randomMatchError = true
 			this.showErrorNotify("something is wrong with server :/")
 			this.isRandomMatchLoading = false;
 		})
 	}
-
+	disableRandomMatchError() {
+		this.randomMatchError = false
+	}
 	onDatePick(date: Date) {
 		this.matchDate = date;
 	}
