@@ -5,6 +5,11 @@ div.matches-tab .dark[data-theme="dark"] {
 	--primary-grey: #adadad;
 	--primary-white: #242424;
 }
+div.standings-tab .dark[data-theme="dark"] {
+	--primary-purple: #d9e1ff;
+	--highlight-purple: #5278ff;
+	--dark-purple: #d9e1ff;
+}
 .lightSyncIcon {
 	filter: invert();
 }

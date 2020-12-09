@@ -29,15 +29,15 @@
 	<div class="center content-spinner" *ngIf="isDataLoading">
 		<img [src]="loadingGif" alt="loading">
 	</div>
-	<div class="wrapper"  *ngIf="!isDataLoading">
+	<div class="standings-tab wrapper"  *ngIf="!isDataLoading">
 		<label class="small light" for="sort">Sort by: </label>
 		<select (change)="onSortByChange($event)" class="select" id="sort">
 			<option value="points">Points</option>
 			<option value="goals">Goals</option>
 			<option value="matches">Matches</option>
 		</select>
-		<div>
-		<standings-table  _id="standings-table" [footballClubs]="footballClubs" [matches]="matches" [sortBy]="footballClubsSortBy"></standings-table>
+		<div class="dark standings-table">
+			<standings-table  _id="standings-table" [footballClubs]="footballClubs" [matches]="matches" [sortBy]="footballClubsSortBy"></standings-table>
 		</div>
 	</div>
 	</tab>
