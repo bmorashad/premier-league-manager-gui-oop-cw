@@ -1,0 +1,6 @@
+:root {
+	--sync-icon : url("assets/icons/refreshDark.png");
+}
+:root[data-theme="dark"]{
+	--sync-icon : url("assets/icons/refreshLight.png");
+}

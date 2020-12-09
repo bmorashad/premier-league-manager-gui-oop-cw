@@ -15,7 +15,6 @@ section {
 	margin-top: 20px;
 }
 :root {
-	--sync-icon : url("assets/icons/refreshDark.png");
 	/* colors */
 	--primary-white: #ffffff;
 	--secondary-white: #fafafa;
@@ -62,7 +61,6 @@ section {
 	--margin-tb-medium: 40px;
 }
 :root[data-theme="dark"]{
-	--sync-icon : url("assets/icons/refreshLight.png");
 	/* colors */
 	--primary-white: #242424;
 	--secondary-white: #1c1c1c;
@@ -378,6 +376,20 @@ button.btn > * {
 /* button spinner wrapper */
 button.btn > .spinner {
 	position: absolute;
+}
+/* icon button */
+button.icon-button {
+	/* background-color: transparent; */
+	/* background-image: var(--sync-icon); */
+	background-size: 2rem 2.2rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 50px; */
+	/* height: 50px; */
+	/* border: 0px; */
 }
 /* error message */
 div.error-message-card {

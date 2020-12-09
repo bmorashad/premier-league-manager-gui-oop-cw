@@ -25,7 +25,8 @@
             ],
             "styles": [
               "src/styles.css",
-			  "src/layout.css"
+			  "src/layout.css",
+			  "src/icons.css"
             ],
             "scripts": []
           },
