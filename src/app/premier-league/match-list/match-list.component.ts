@@ -14,6 +14,12 @@ import { trigger, style, animate, transition, query, stagger } from '@angular/an
 				  stagger(100, [animate('0.2s', style({transform: 'translateY(0)', opacity: '1'}))])
 			  ], {optional: true})
 		  ])
+	  ]),
+	  trigger('slideIn', [
+		  transition('* <=> *', [
+			  style({transform: 'translateY(-25px)', opacity: 0}),
+			  animate('0.2s ease-in', style({transform: 'translateY(0)', opacity: 1}))
+		  ])
 	  ])
   ]
 })
