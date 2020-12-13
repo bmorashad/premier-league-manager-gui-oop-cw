@@ -31,6 +31,7 @@
 						<td><span class="text5">{{footballClub.points}}</span></td>
 						<td>
 							<div class="form-container">
+								<span class="no-matches" *ngIf="getMatchesByClub(footballClub, 1).length == 0">-</span>
 								<ng-container *ngFor="let match of getMatchesByClub(footballClub, 3)">
 									<span class="form">
 										<span class="victory-state draw-match" *ngIf="isMatchDraw(match)">D</span>
