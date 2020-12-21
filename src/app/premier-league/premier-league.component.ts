@@ -114,17 +114,17 @@ export class PremierLeagueComponent implements OnInit {
 				let generatedMatch = res.data.match
 				this.generatedMatch = generatedMatch
 				this.matches = this.addMatch(generatedMatch)
-				this.loadClubs().subscribe( res => {
-					if(res.status == 1) {
-						this.footballClubs = res.data.footballClubs
-					}
-				});
 				this.toggleModal("match-success")
 			} else {
 				this.setErrorMessage(res.errorMessage);
 				this.toggleModal("match-error")
 			}
 			this.isRandomMatchLoading = false;
+			this.loadClubs().subscribe( res => {
+				if(res.status == 1) {
+					this.footballClubs = res.data.footballClubs
+				}
+			});
 		}, () => {
 			this.randomMatchError = true
 			this.showErrorNotify("something is wrong with server :/")
