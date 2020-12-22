@@ -115,16 +115,24 @@ export class PremierLeagueComponent implements OnInit {
 				this.generatedMatch = generatedMatch
 				this.matches = this.addMatch(generatedMatch)
 				this.toggleModal("match-success")
+				this.loadClubs().subscribe( res => {
+					if(res.status == 1) {
+						this.footballClubs = res.data.footballClubs
+					}
+				});
 			} else {
 				this.setErrorMessage(res.errorMessage);
 				this.toggleModal("match-error")
+				this.loadData().subscribe(res => {
+					if(res[0].status == 1) {
+						this.matches = res[0].data.matches;
+					}
+					if(res[1].status == 1) {
+						this.footballClubs = res[0].data.footballClubs;
+					}
+				})
 			}
 			this.isRandomMatchLoading = false;
-			this.loadClubs().subscribe( res => {
-				if(res.status == 1) {
-					this.footballClubs = res.data.footballClubs
-				}
-			});
 		}, () => {
 			this.randomMatchError = true
 			this.showErrorNotify("something is wrong with server :/")
