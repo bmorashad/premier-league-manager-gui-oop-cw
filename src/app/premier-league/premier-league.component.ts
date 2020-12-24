@@ -128,7 +128,7 @@ export class PremierLeagueComponent implements OnInit {
 						this.matches = res[0].data.matches;
 					}
 					if(res[1].status == 1) {
-						this.footballClubs = res[0].data.footballClubs;
+						this.footballClubs = res[1].data.footballClubs;
 					}
 				})
 			}
