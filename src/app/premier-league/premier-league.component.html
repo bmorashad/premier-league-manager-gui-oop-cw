@@ -34,7 +34,7 @@
 		<select (change)="onSortByChange($event)" class="select" id="sort">
 			<option value="points">Points</option>
 			<option value="goals">Goals</option>
-			<option value="matches">Matches</option>
+			<option value="wins">Wins</option>
 		</select>
 		<div class="dark standings-table">
 			<standings-table  _id="standings-table" [footballClubs]="footballClubs" [matches]="matches" [sortBy]="footballClubsSortBy"></standings-table>

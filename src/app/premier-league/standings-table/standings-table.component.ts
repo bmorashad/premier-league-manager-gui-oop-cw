@@ -38,8 +38,8 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 			this.footballClubs = this.sortClubsByPoints(footballClubs);
 		} else if (sortBy == "GOALS") {
 			this.footballClubs = this.sortClubsByGoals(footballClubs);
-		} else if (sortBy == "MATCHES") {
-			this.footballClubs = this.sortClubsByMatches(footballClubs);
+		} else if (sortBy == "WINS") {
+			this.footballClubs = this.sortClubsByWins(footballClubs);
 		} else {
 			console.error("Give option doesn't exist:" + sortBy)
 		}
@@ -54,8 +54,8 @@ export class StandingsTableComponent implements OnInit, OnChanges{
 	sortClubsByGoals(footballClubs: IFootballClub[]) : IFootballClub[] {
 		return footballClubs.sort((clubA, clubB) => clubB.goalsScored - clubA.goalsScored)
 	}
-	sortClubsByMatches(footballClubs: IFootballClub[]) : IFootballClub[] {
-		return footballClubs.sort((clubA, clubB) => clubB.matchCount - clubA.matchCount)
+	sortClubsByWins(footballClubs: IFootballClub[]) : IFootballClub[] {
+		return footballClubs.sort((clubA, clubB) => clubB.winCount - clubA.winCount)
 	}
 
 	isClubInMatch(match: IMatch, footballClub: IFootballClub) {
